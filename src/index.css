@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --color-alpha: #363636;
+  --color-beta: #248a61;
+  --color-tango: #e3d9d1;
+  --color-gamma: #046353;
+  --color-sage: #9ac7b3;
+  --color-sage-light: #a8c5b4;
+  --color-cream: #e3d9d1;
+  --color-cream-light: #ede6df;
+  --color-cream-card: #f7f3ee;
+  --color-charcoal: #363636;
+  --font-barlow: 'Barlow Condensed', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-paytone: 'Paytone One', sans-serif;
+  --font-charm: 'Charm', cursive;
+  --font-oi: 'Oi', cursive;
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* Custom smooth scroll and typography enhancements */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+section[id], div[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  background-color: #e3d9d1;
+  color: #363636;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* RTL & Arabic Typography System */
+[dir="rtl"] {
+  font-family: 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .font-barlow {
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 0em !important;
+}
+
+[dir="rtl"] .font-poppins {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* For Arabic, letter spacing (tracking) breaks Arabic ligature connections */
+[dir="rtl"] .tracking-widest,
+[dir="rtl"] .tracking-wider,
+[dir="rtl"] .tracking-wide,
+[dir="rtl"] [class*="tracking-["] {
+  letter-spacing: normal !important;
+}
+
+/* Proper line heights for Arabic readability */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+  line-height: 1.25 !important;
+}
+
+[dir="rtl"] p {
+  line-height: 1.7 !important;
+}
+
+/* RTL Arrow Flipping for directional indicators */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+::selection {
+  background-color: #248a61;
+  color: #ffffff;
+}
+
+/* Continuous infinite technology marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-scroll-rtl {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 32s linear infinite;
+  will-change: transform;
+}
+
+[dir="rtl"] .animate-marquee {
+  animation: marquee-scroll-rtl 32s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee,
+  [dir="rtl"] .animate-marquee {
+    animation-duration: 22s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  [dir="rtl"] .animate-marquee {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Mohammad Hadi Shukoor — Full Stack Software Engineer",
+  "short_name": "Hadi Shukoor",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon-emerald.png",
+      "sizes": "805x805",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#248a61",
+  "background_color": "#e3d9d1",
+  "display": "standalone"
+}
