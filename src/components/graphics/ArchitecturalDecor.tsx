@@ -182,7 +182,7 @@ export const HeroBackdrop: React.FC<HeroBackdropProps> = ({ isRTL = false }) => 
             fontFamily="monospace"
             letterSpacing="0.15em"
           >
-            25.2048° N
+            11.9663657° N
           </text>
           <text
             x="1275"
@@ -193,7 +193,7 @@ export const HeroBackdrop: React.FC<HeroBackdropProps> = ({ isRTL = false }) => 
             fontFamily="monospace"
             letterSpacing="0.15em"
           >
-            55.2708° E
+            75.2626666° E
           </text>
         </g>
 
@@ -410,26 +410,26 @@ export const HeroBackdrop: React.FC<HeroBackdropProps> = ({ isRTL = false }) => 
 
           {/* Discreet Mobile Coordinate Stamp */}
           <text
-            x={isRTL ? 8 : 310}
+            x={isRTL ? 8 : 300}
             y={120}
             fill="#363636"
             fillOpacity="0.26"
             fontSize="7"
             fontFamily="monospace"
-            letterSpacing="0.12em"
+            letterSpacing="0.08em"
           >
-            25.20° N
+            11.9663657° N
           </text>
           <text
-            x={isRTL ? 8 : 310}
+            x={isRTL ? 8 : 300}
             y={130}
             fill="#363636"
             fillOpacity="0.26"
             fontSize="7"
             fontFamily="monospace"
-            letterSpacing="0.12em"
+            letterSpacing="0.08em"
           >
-            55.27° E
+            75.2626666° E
           </text>
         </g>
 
