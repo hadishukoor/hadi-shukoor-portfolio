@@ -46,21 +46,43 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
       // Update dynamic document title & meta tags
       if (language === 'ar') {
-        document.title = 'محمد هادي شكور — مهندس برمجيات وتطوير شامل (Full Stack)';
+        document.title = 'محمد هادي شكور | مطور برمجيات';
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
           metaDesc.setAttribute(
             'content',
-            'مهندس برمجيات وتطوير شامل يبني أنظمة ويب إنتاجية، واجهات برمجية، وتطبيقات أعمال متكاملة مع خبرة مشاريع دولية وتجارب ثنائية اللغة.'
+            'مطور برمجيات يبني تطبيقات ويب إنتاجية، واجهات برمجية REST APIs، منصات ERP وCRM للأعمال، وأتمتة مسارات العمل مع خبرة مشاريع دولية.'
+          );
+        }
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+          ogTitle.setAttribute('content', 'محمد هادي شكور | مطور برمجيات');
+        }
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) {
+          ogDesc.setAttribute(
+            'content',
+            'مطور برمجيات يبني تطبيقات ويب إنتاجية، واجهات برمجية REST APIs، منصات ERP وCRM للأعمال، وأتمتة مسارات العمل مع خبرة مشاريع دولية.'
           );
         }
       } else {
-        document.title = 'Mohammad Hadi Shukoor — Full Stack Software Engineer';
+        document.title = 'Mohammad Hadi Shukoor | Software Developer';
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
           metaDesc.setAttribute(
             'content',
-            'Full Stack Software Engineer building production web applications, APIs, business systems, and automation with international client project experience.'
+            'Software Developer building production web applications, REST APIs, business software, ERP/CRM platforms, and workflow automation.'
+          );
+        }
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+          ogTitle.setAttribute('content', 'Mohammad Hadi Shukoor | Software Developer');
+        }
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) {
+          ogDesc.setAttribute(
+            'content',
+            'Software Developer building production web applications, REST APIs, business software, ERP/CRM platforms, and workflow automation.'
           );
         }
       }

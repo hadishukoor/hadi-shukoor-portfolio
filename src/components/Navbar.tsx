@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onNavigate, activ
             onKeyDown={(e) => {
               if (e.key === 'Enter') handleLinkClick('hero');
             }}
-            aria-label={language === 'ar' ? 'هادي شكور — مهندس برمجيات' : 'Hadi Shukoor — Full Stack Software Engineer'}
+            aria-label={language === 'ar' ? 'هادي شكور — مطور برمجيات' : 'Hadi Shukoor — Software Developer'}
           >
             {/* HS Brand Monogram Mark */}
             <img
@@ -158,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact, onNavigate, activ
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 text-[#363636] hover:text-[#248a61] transition-colors cursor-pointer"
-              aria-label="Toggle menu"
+              aria-label={language === 'ar' ? (mobileMenuOpen ? 'إغلاق القائمة الرئيسية' : 'فتح القائمة الرئيسية') : (mobileMenuOpen ? 'Close main menu' : 'Open main menu')}
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

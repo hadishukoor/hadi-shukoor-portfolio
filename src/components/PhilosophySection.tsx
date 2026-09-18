@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { RegistrationCorner, SectionContourLines } from './graphics/ArchitecturalDecor';
 
 export const PhilosophySection: React.FC = () => {
   const { language, t } = useLanguage();
@@ -9,6 +10,13 @@ export const PhilosophySection: React.FC = () => {
       id="philosophy"
       className="relative w-full bg-[#e3d9d1] py-24 md:py-32 px-4 sm:px-6 md:px-12 border-t border-[#363636]/10 z-20"
     >
+      {/* Precision corner registration brackets */}
+      <div className="absolute top-6 left-4 sm:left-6 z-10 pointer-events-none">
+        <RegistrationCorner position="top-left" size={18} className="opacity-50" />
+      </div>
+      <div className="absolute bottom-6 right-4 sm:right-6 z-10 pointer-events-none">
+        <RegistrationCorner position="bottom-right" size={18} className="opacity-50" />
+      </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: Big Editorial Statement */}
         <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
@@ -62,6 +70,9 @@ export const PhilosophySection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Subtle section contour transition */}
+      <SectionContourLines className="mt-14 opacity-30" />
     </section>
   );
 };

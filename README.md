@@ -1,6 +1,6 @@
-# Mohammad Hadi Shukoor — Full Stack Software Engineer Portfolio
+# Mohammad Hadi Shukoor — Software Developer Portfolio
 
-Personal portfolio website and engineering showcase for Mohammad Hadi Shukoor, Full Stack Software Engineer & System Architect.
+Personal portfolio website and engineering showcase for Mohammad Hadi Shukoor, Software Developer.
 
 ## Tech Stack
 

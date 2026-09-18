@@ -225,7 +225,7 @@ export interface TranslationContent {
 export const translations: Record<'en' | 'ar', TranslationContent> = {
   en: {
     nav: {
-      brandSubtitle: "FULL STACK SOFTWARE ENGINEER",
+      brandSubtitle: "SOFTWARE DEVELOPER",
       philosophy: "PHILOSOPHY",
       about: "ABOUT",
       experience: "EXPERIENCE",
@@ -238,8 +238,8 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       langLabel: "EN | العربية",
     },
     hero: {
-      eyebrow: "Full Stack Software Engineer",
-      role: "Full Stack Software Engineer",
+      eyebrow: "Software Developer",
+      role: "Software Developer",
       name: ["MOHAMMAD", "HADI", "SHUKOOR"],
       subtitle: {
         building: "BUILDING",
@@ -378,19 +378,19 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       titlePart1: "WHO I AM &",
       titlePart2: "WHAT I BUILD",
       description:
-        "The engineer behind the architecture. Practical problem solving, end-to-end responsibility, and clean production systems.",
-      portraitLabel: "Mohammad Hadi Shukoor — Full Stack Software Engineer",
-      roleTag: "Software Engineer",
+        "The developer behind the architecture. Practical problem solving, end-to-end responsibility, and clean production systems.",
+      portraitLabel: "Mohammad Hadi Shukoor — Software Developer",
+      roleTag: "Software Developer",
       quickFacts: [
         { label: "Location", value: "Kannur, Kerala, India" },
-        { label: "Role", value: "Full Stack Software Engineer" },
+        { label: "Role", value: "Software Developer" },
         { label: "Core Focus", value: "Web Systems, REST APIs, Databases" },
         { label: "Availability", value: "Contract, Full-Time & Freelance" },
         { label: "Education", value: "B.Tech IT (LPU, 2023–2027)" },
       ],
-      bioHeading: "A SOFTWARE ENGINEER WHO BUILDS SYSTEMS.",
+      bioHeading: "A SOFTWARE DEVELOPER WHO BUILDS SYSTEMS.",
       bioParagraphs: [
-        "I am Mohammad Hadi Shukoor, a Full Stack Software Engineer based in Kannur, Kerala, India.",
+        "I am Mohammad Hadi Shukoor, a Software Developer based in Kannur, Kerala, India.",
         "I build web applications, APIs, database-backed systems, and business workflows.",
         "I enjoy taking a requirement, understanding the underlying problem, designing the system, building it, debugging it, and getting it deployed.",
       ],
@@ -559,7 +559,7 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
     },
     footer: {
       brandName: "MOHAMMAD HADI SHUKOOR",
-      role: "Full Stack Software Engineer",
+      role: "Software Developer",
       summary:
         "Engineering full-stack web applications, ERP architectures, business automation, and scalable REST APIs. Transforming complex business requirements into resilient, verified running code.",
       navTitle: "Navigation",
@@ -574,9 +574,9 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
   },
   ar: {
     nav: {
-      brandSubtitle: "مهندس برمجيات وتطوير شامل (FULL STACK)",
+      brandSubtitle: "مطور برمجيات",
       philosophy: "الفلسفة الهندسية",
-      about: "عنّي",
+      about: "نبذة عني",
       experience: "الخبرة العملية",
       workflow: "منهجية العمل",
       work: "المشاريع",
@@ -587,8 +587,8 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       langLabel: "العربية | EN",
     },
     hero: {
-      eyebrow: "مهندس برمجيات وتطوير شامل",
-      role: "مهندس برمجيات متكامل (Full Stack)",
+      eyebrow: "مطور برمجيات",
+      role: "مطور برمجيات",
       name: ["محمد", "هادي", "شكور"],
       subtitle: {
         building: "بناء",
@@ -601,27 +601,27 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       description:
         "هندسة وبناء تطبيقات الويب الإنتاجية، أنظمة الأعمال، الواجهات البرمجية، وأتمتة مسارات العمل من مرحلة المتطلبات حتى النشر الفعلي. متخصص في منصات ERP التشغيلية، وأنظمة CRM، وبوابات الإدارة والعملاء الآمنة.",
       tags: [
-        { label: "تطوير شامل (FULL STACK)" },
-        { label: "أتمتة الأعمال والعمليات" },
-        { label: "أنظمة ERP و CRM" },
-        { label: "الواجهات والتكامل" },
-        { label: "قواعد البيانات والأمان" },
-        { label: "أنظمة مدعومة بالذكاء الاصطناعي" },
+        { label: "مطور برمجيات" },
+        { label: "أتمتة العمليات ومسارات العمل" },
+        { label: "أنظمة تخطيط المؤسسات (ERP & CRM)" },
+        { label: "الواجهات البرمجية والتكامل (REST APIs)" },
+        { label: "قواعد البيانات ونماذج الصلاحيات (RBAC)" },
+        { label: "حلول برمجية معززة بالذكاء الاصطناعي" },
       ],
-      exploreWork: "استكشف الأنظمة",
+      exploreWork: "استعراض المشاريع",
       letsBuild: "لنبدأ العمل",
       scrollExplore: "استكشف",
     },
     kinetic: {
       sectionLabel: "المحاور الهندسية الأساسية",
       sectionSub: "وضوح • دقة • إنجاز عملي",
-      row1: { build: "بناء", debug: "تصحيح", deploy: "نشر فعلي" },
+      row1: { build: "بناء وتطوير", debug: "تصحيح وتحليل", deploy: "نشر وتشغيل" },
       row2: { systems: "أنظمة برمجية", and: "و", apis: "واجهات برمجية إنتاجية" },
       row3: { requirements: "المتطلبات التشغيلية", to: "←", workingSoftware: "برمجيات تعمل بكفاءة" },
-      row4: { fullStack: "تطوير شامل", engineering: "هندسة البرمجيات", architecture: "البنية المعمارية" },
+      row4: { fullStack: "هندسة متكاملة", engineering: "هندسة البرمجيات", architecture: "معمارية النظم" },
     },
     philosophy: {
-      eyebrow: "البيان الهندسي",
+      eyebrow: "المنهجية والفلسفة الهندسية",
       titleLine1: "من المتطلبات",
       titleLine2: "إلى برمجيات",
       titleLine3: "تعمل بكفاءة.",
@@ -727,21 +727,21 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       titlePart1: "من أنا &",
       titlePart2: "ما الذي أبنيه",
       description:
-        "المهندس خلف الأنظمة والحلول البرمجية. حل عملي للمشكلات، تحمل كامل للمسؤولية التقنية، وأنظمة برمجية نظيفة للإنتاج.",
-      portraitLabel: "محمد هادي شكور — مهندس برمجيات وتطوير شامل",
-      roleTag: "مهندس برمجيات",
+        "المطور خلف الأنظمة والحلول البرمجية. حل عملي للمشكلات، تحمل كامل للمسؤولية التقنية، وأنظمة برمجية نظيفة للإنتاج.",
+      portraitLabel: "محمد هادي شكور — مطور برمجيات",
+      roleTag: "مطور برمجيات",
       quickFacts: [
         { label: "الموقع", value: "كانور، كيرالا، الهند" },
-        { label: "الدور المهني", value: "مهندس برمجيات وتطوير شامل (Full Stack)" },
+        { label: "الدور المهني", value: "مطور برمجيات" },
         { label: "مجال التركيز", value: "أنظمة الويب، الواجهات البرمجية، وقواعد البيانات" },
         { label: "التوافر المهني", value: "عقود مشاريع، دوام كامل، وعمل حر" },
         { label: "المؤهل الأكاديمي", value: "بكالوريوس تكنولوجيا المعلومات (2023–2027)" },
       ],
-      bioHeading: "مهندس برمجيات يبني أنظمة تشغيلية حقيقية.",
+      bioHeading: "مطور برمجيات يبني أنظمة تشغيلية حقيقية.",
       bioParagraphs: [
-        "أنا محمد هادي شكور، مهندس برمجيات وتطوير شامل (Full Stack Software Engineer) مقيم في كانور، كيرالا، الهند.",
-        "أقوم بتصميم وتطوير تطبيقات الويب، واجهات برمجة التطبيقات (APIs)، الأنظمة المعتمدة على قواعد البيانات، ومسارات العمل التشغيلية للشركات.",
-        "أستمتع بدراسة المتطلبات التجارية، واستيعاب جوهر المشكلة، ثم هندسة النظام وبنائه وتصحيحه ونشره في بيئة الإنتاج بثقة وكفاءة.",
+        "أنا محمد هادي شكور، مطور برمجيات (Software Developer) مقيم في كانور، كيرالا، الهند.",
+        "أقوم بتصميم وتطوير تطبيقات الويب، واجهات برمجة التطبيقات (REST APIs)، الأنظمة المعتمدة على قواعد البيانات، ومسارات العمل التشغيلية للشركات.",
+        "أستمتع بدراسة المتطلبات التجارية، واستيعاب جوهر المشكلة، ثم تصميم النظام وبنائه وتصحيحه ونشره في بيئة الإنتاج بثقة وكفاءة.",
       ],
       viewExperience: "استعراض الخبرة العملية",
       getInTouch: "تواصل معي مباشرة",
@@ -758,7 +758,7 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       educationTitle: "الأساس الأكاديمي",
       degree: "بكالوريوس التكنولوجيا (B.Tech)",
       field: "تكنولوجيا المعلومات (IT)",
-      institution: "جامعة لوفلي بروفيشينال (LPU)",
+      institution: "جامعة لوفلي بروفيشينال (Lovely Professional University)",
       period: "أغسطس 2023 – يوليو 2027",
       location: "البنجاب، الهند",
       curriculum:
@@ -834,7 +834,7 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       titlePart1: "الهندسة المعززة",
       titlePart2: "بالذكاء الاصطناعي",
       description:
-        "الذكاء الاصطناعي أداة لتسريع الإنجاز، وليس بديلاً عن المهندس. كيف أستفيد من الذكاء الآلي للسرعة دون المساس بالدقة الهندسية.",
+        "الذكاء الاصطناعي أداة لتسريع الإنجاز، وليس بديلاً عن المطور. كيف أستفيد من الذكاء الآلي للسرعة دون المساس بالدقة الهندسية.",
       stanceTitle: "الموقف الواقعي من الذكاء الاصطناعي في بيئة الإنتاج",
       quoteLine1: "\"الذكاء الاصطناعي يسرع النماذج الأولية.",
       quoteLine2: "لكن الحكم الهندسي، البنية المعمارية، والتحقق الصارم تبقى مسؤوليتي وحدي.\"",
@@ -846,7 +846,7 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
         { step: "03", name: "الفهم الكامل", desc: "عدم اعتماد أي كود دون استيعاب دقيق لتأثيره على كفاءة الذاكرة والاستعلامات." },
         { step: "04", name: "الاختبار الصارم", desc: "التحقق من منطق الأعمال في ظروف الشبكة الحقيقية وفحوصات اختراق الصلاحيات." },
         { step: "05", name: "الملاءمة والدمج", desc: "إعادة الهيكلة ليتكامل الكود بسلاسة مع أنماط المشروع وتسمياته وقواعد بياناته." },
-        { step: "06", name: "النشر والتشغيل", desc: "نشر أنظمة محققة ومملوكة للمهندس وخالية تماماً من الهلوسات أو الأكواد الغامضة." },
+        { step: "06", name: "النشر والتشغيل", desc: "نشر أنظمة محققة ومملوكة للمطور ومختبرة للإنتاج وخالية تماماً من الهلوسات أو الأكواد الغامضة." },
       ],
     },
     contact: {
@@ -902,15 +902,15 @@ export const translations: Record<'en' | 'ar', TranslationContent> = {
       sendAnother: "إرسال رسالة أخرى",
       errors: {
         name: "يرجى إدخال اسمك الكريم.",
-        email: "يرجى إدخال بريد إلكتروني صالح.",
+        email: "يرجى إدخال بريد إلكتروني صحيح.",
         message: "يرجى وصف متطلبات المشروع (10 أحرف كحد أدنى).",
       },
     },
     footer: {
       brandName: "محمد هادي شكور",
-      role: "مهندس برمجيات وتطوير شامل",
+      role: "مطور برمجيات",
       summary:
-        "هندسة وتطوير تطبيقات الويب المتكاملة، أنظمة ERP، أتمتة مسارات العمليات، والواجهات البرمجية القابلة للتوسع. تحويل متطلبات الأعمال المعقدة إلى كود برمجي موثوق وقيد التشغيل الإنتاجي.",
+        "تصميم وهندسة تطبيقات الويب المتكاملة، أنظمة ERP، أتمتة مسارات العمل، والواجهات البرمجية القابلة للتوسع. تحويل متطلبات الأعمال المعقدة إلى برمجيات موثوقة وقيد التشغيل الفعلي.",
       navTitle: "روابط سريعة",
       directTitle: "قنوات التواصل",
       rights: "جميع الحقوق محفوظة.",

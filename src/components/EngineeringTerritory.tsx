@@ -34,13 +34,18 @@ export const EngineeringTerritory: React.FC = () => {
       />
 
       {/* Large watermark background text */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none">
-        <h2 className="text-[20vw] md:text-[24vw] font-black text-[#363636] opacity-[0.04] uppercase leading-none font-barlow tracking-wider transition-all duration-700">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none" aria-hidden="true">
+        <div className="text-[20vw] md:text-[24vw] font-black text-[#363636] opacity-[0.04] uppercase leading-none font-barlow tracking-wider transition-all duration-700">
           {item.title.split(' ')[0]}
-        </h2>
+        </div>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Semantic Section Heading for Accessibility and SEO */}
+        <h2 className="sr-only">
+          {language === 'ar' ? 'مجالات الهندسة البرمجية والأنظمة' : 'Engineering Territories & Systems Architecture'}
+        </h2>
+
         {/* Left Column: Territory Details */}
         <div className="lg:col-span-6 space-y-6">
           <div>
@@ -148,7 +153,7 @@ export const EngineeringTerritory: React.FC = () => {
                   className={`h-2 rounded-full transition-all cursor-pointer ${
                     idx === safeIndex ? 'w-8 bg-[#248a61]' : 'w-2 bg-[#363636]/20'
                   }`}
-                  aria-label={`Go to territory slide ${idx + 1}`}
+                  aria-label={language === 'ar' ? `الانتقال إلى الشريحة ${idx + 1}` : `Go to territory slide ${idx + 1}`}
                 />
               ))}
             </div>
@@ -157,14 +162,14 @@ export const EngineeringTerritory: React.FC = () => {
               <button
                 onClick={prevSlide}
                 className="w-11 h-11 rounded-full border border-[#363636]/20 bg-white/60 hover:bg-[#248a61] text-[#363636] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
-                aria-label="Previous territory"
+                aria-label={language === 'ar' ? 'المجال السابق' : 'Previous territory'}
               >
                 <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
               </button>
               <button
                 onClick={nextSlide}
                 className="w-11 h-11 rounded-full bg-[#248a61] hover:bg-[#1f7552] text-white flex items-center justify-center transition-colors cursor-pointer shadow-md"
-                aria-label="Next territory"
+                aria-label={language === 'ar' ? 'المجال التالي' : 'Next territory'}
               >
                 <ChevronRight className="w-5 h-5 rtl:rotate-180" />
               </button>

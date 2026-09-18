@@ -2,6 +2,7 @@ import React from 'react';
 import { Linkedin, Instagram, Facebook, MessageCircle, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { CONTACT_INFO, PROFILE } from '../data/profile';
 import { useLanguage } from '../context/LanguageContext';
+import { RegistrationCorner } from './graphics/ArchitecturalDecor';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
@@ -12,7 +13,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
   const { language, t } = useLanguage();
 
   return (
-    <footer className="relative bg-[#2e2e2e] text-[#e3d9d1] pt-16 pb-12 border-t border-white/5 z-20">
+    <footer className="relative bg-[#2e2e2e] text-[#e3d9d1] pt-16 pb-12 border-t border-white/5 z-20 overflow-hidden">
+      {/* Precision corner registration brackets */}
+      <div className="absolute top-4 left-4 z-10 pointer-events-none">
+        <RegistrationCorner position="top-left" size={18} className="opacity-30 text-white/30" />
+      </div>
+      <div className="absolute top-4 right-4 z-10 pointer-events-none">
+        <RegistrationCorner position="top-right" size={18} className="opacity-30 text-white/30" />
+      </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
           {/* Brand & Positioning (5 cols) */}
@@ -28,8 +36,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
             </p>
             <p className="text-sm font-poppins text-[#e3d9d1]/75 leading-relaxed max-w-sm">
               {language === 'ar'
-                ? 'مهندس برمجيات متخصص في بناء تطبيقات الويب المتكاملة، وأنظمة إدارة الأعمال ERP، وواجهات REST APIs القابلة للتوسع. تحويل متطلبات الأعمال المعقدة إلى برمجيات حية وموثوقة.'
-                : 'Engineering full-stack web applications, ERP architectures, and scalable REST APIs. Transforming business requirements into resilient, verified running code.'}
+                ? 'مطور برمجيات متخصص في بناء تطبيقات الويب المتكاملة، وأنظمة إدارة الأعمال ERP، وواجهات REST APIs القابلة للتوسع. تحويل متطلبات الأعمال المعقدة إلى برمجيات حية وموثوقة.'
+                : 'Building full-stack web applications, ERP architectures, and scalable REST APIs. Transforming business requirements into resilient, verified running code.'}
             </p>
 
             {/* Social / Direct Channels */}
@@ -40,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#248a61] text-[#e3d9d1] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Connect on WhatsApp"
+                aria-label={language === 'ar' ? 'التواصل عبر واتساب' : 'Connect on WhatsApp'}
                 title={`WhatsApp: ${CONTACT_INFO.phoneFormatted}`}
               >
                 <MessageCircle className="w-4 h-4" />
@@ -52,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#248a61] text-[#e3d9d1] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="LinkedIn Profile"
+                aria-label={language === 'ar' ? 'الملف الشخصي على لينكد إن' : 'LinkedIn Profile'}
                 title={`LinkedIn: ${CONTACT_INFO.linkedinHandle}`}
               >
                 <Linkedin className="w-4 h-4" />
@@ -64,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#248a61] text-[#e3d9d1] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Instagram Profile"
+                aria-label={language === 'ar' ? 'الملف الشخصي على إنستغرام' : 'Instagram Profile'}
                 title={`Instagram: @${CONTACT_INFO.instagramHandle}`}
               >
                 <Instagram className="w-4 h-4" />
@@ -76,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#248a61] text-[#e3d9d1] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Facebook Profile"
+                aria-label={language === 'ar' ? 'الملف الشخصي على فيسبوك' : 'Facebook Profile'}
                 title={`Facebook: /${CONTACT_INFO.facebookHandle}`}
               >
                 <Facebook className="w-4 h-4" />
@@ -86,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenContact }) => 
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#248a61] text-[#e3d9d1] hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Send Email"
+                aria-label={language === 'ar' ? 'إرسال بريد إلكتروني' : 'Send Email'}
                 title={`Email: ${CONTACT_INFO.email}`}
               >
                 <Mail className="w-4 h-4" />

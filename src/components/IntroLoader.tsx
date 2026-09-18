@@ -229,25 +229,25 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
         <button
           onClick={handleSkip}
           className="group flex items-center gap-1.5 px-2.5 py-1 rounded border border-[#363636]/15 hover:border-[#248a61] hover:text-[#248a61] transition-colors cursor-pointer text-[9px] sm:text-[10px] tracking-widest uppercase font-mono"
-          aria-label="Skip system initialization intro"
+          aria-label={language === 'ar' ? 'تخطي شاشة البدء' : 'Skip system initialization intro'}
         >
           <span>ESC</span>
           <span className="text-[#363636]/30 group-hover:text-[#248a61]">/</span>
-          <span>SKIP</span>
+          <span>{language === 'ar' ? 'تخطي' : 'SKIP'}</span>
         </button>
       </div>
 
       {/* CENTER STAGE: COHESIVE, SPACIOUS EDITORIAL COMPOSITION */}
       <div
-        className={`relative z-[3] my-auto flex flex-col items-center justify-center max-w-[320px] sm:max-w-md mx-auto w-full text-center py-2 sm:py-4 transition-all duration-400 ease-out ${
-          isExiting ? 'scale-95 opacity-0 -translate-y-2' : 'scale-100 opacity-100 translate-y-0'
+        className={`relative z-[2] my-auto flex flex-col items-center text-center transition-all duration-700 ease-out ${
+          isSystemReady ? 'scale-[1.01]' : 'scale-100'
         }`}
       >
         {/* 1. HS MONOGRAM (PRIMARY FOCAL POINT: Larger, Proud, Emerald #248A61) */}
         <div className="relative mb-3 sm:mb-4">
           <img
             src="/images/favicon-emerald.png"
-            alt="HS Monogram"
+            alt={language === 'ar' ? 'شعار هادي شكور' : 'Hadi Shukoor monogram logo'}
             width="96"
             height="96"
             className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain drop-shadow-[0_4px_22px_rgba(36,138,97,0.3)] transition-transform duration-500 hover:scale-105"
@@ -256,11 +256,15 @@ export const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
 
         {/* 2. REFINED BRANDING HIERARCHY */}
         <div className="space-y-1 mb-3 sm:mb-4">
-          <h1 className="font-barlow text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.22em] sm:tracking-[0.28em] text-[#363636] uppercase leading-none">
+          <div
+            role="heading"
+            aria-level={2}
+            className="font-barlow text-2xl sm:text-3xl md:text-4xl font-bold tracking-[0.22em] sm:tracking-[0.28em] text-[#363636] uppercase leading-none"
+          >
             {language === 'ar' ? 'هادي شكور' : 'HADI SHUKOOR'}
-          </h1>
+          </div>
           <p className="font-poppins text-[9.5px] sm:text-xs font-semibold tracking-[0.22em] text-[#363636]/60 uppercase">
-            {language === 'ar' ? 'مهندس برمجيات وتطوير شامل' : 'FULL STACK SOFTWARE ENGINEER'}
+            {language === 'ar' ? 'مطور برمجيات' : 'SOFTWARE DEVELOPER'}
           </p>
         </div>
 

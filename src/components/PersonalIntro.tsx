@@ -2,6 +2,7 @@ import React from 'react';
 import { PROFILE } from '../data/profile';
 import { useLanguage } from '../context/LanguageContext';
 import { MapPin, Briefcase, Code2, Sparkles, GraduationCap, ArrowDownRight, Terminal } from 'lucide-react';
+import { RegistrationCorner } from './graphics/ArchitecturalDecor';
 
 interface PersonalIntroProps {
   onExploreExperience?: () => void;
@@ -52,28 +53,38 @@ export const PersonalIntro: React.FC<PersonalIntroProps> = ({
                     src={profileImage}
                     alt={
                       language === 'ar'
-                        ? 'محمد هادي شكور — مهندس برمجيات'
-                        : 'Mohammad Hadi Shukoor — Full Stack Software Engineer'
+                        ? 'صورة شخصية لمحمد هادي شكور — مطور برمجيات'
+                        : 'Portrait photograph of Mohammad Hadi Shukoor — Software Developer'
                     }
+                    loading="lazy"
+                    decoding="async"
                     className="relative z-10 w-full h-full object-cover object-bottom select-none transition-transform duration-700 ease-out group-hover:scale-[1.01]"
                   />
 
-                  {/* Architectural corner framing brackets */}
-                  <div className="absolute top-4 left-4 z-20 w-4 h-4 border-t-2 border-l-2 border-[#248a61]/50 pointer-events-none" />
-                  <div className="absolute top-4 right-4 z-20 w-4 h-4 border-t-2 border-r-2 border-[#248a61]/50 pointer-events-none" />
-                  <div className="absolute bottom-4 left-4 z-20 w-4 h-4 border-b-2 border-l-2 border-[#248a61]/50 pointer-events-none" />
-                  <div className="absolute bottom-4 right-4 z-20 w-4 h-4 border-b-2 border-r-2 border-[#248a61]/50 pointer-events-none" />
+                  {/* Architectural corner framing registration marks */}
+                  <div className="absolute top-3 left-3 z-20 pointer-events-none">
+                    <RegistrationCorner position="top-left" size={16} className="opacity-70" />
+                  </div>
+                  <div className="absolute top-3 right-3 z-20 pointer-events-none">
+                    <RegistrationCorner position="top-right" size={16} className="opacity-70" />
+                  </div>
+                  <div className="absolute bottom-3 left-3 z-20 pointer-events-none">
+                    <RegistrationCorner position="bottom-left" size={16} className="opacity-70" />
+                  </div>
+                  <div className="absolute bottom-3 right-3 z-20 pointer-events-none">
+                    <RegistrationCorner position="bottom-right" size={16} className="opacity-70" />
+                  </div>
 
                   {/* Subtle Minimalist Architectural Header Stamp */}
                   <div className="absolute top-4 left-8 right-8 z-20 flex items-center justify-between pointer-events-none">
                     <div className="px-2.5 py-1 rounded-full bg-[#141312]/85 backdrop-blur-md border border-white/10 text-white flex items-center gap-1.5 shadow-sm">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#248a61] animate-pulse" />
                       <span className="text-[9px] font-mono tracking-widest uppercase font-semibold text-[#ede6df]">
-                        {language === 'ar' ? 'مهندس برمجيات' : 'FULL STACK DEV'}
+                        {language === 'ar' ? 'مطور برمجيات' : 'SOFTWARE DEVELOPER'}
                       </span>
                     </div>
                     <span className="text-[9px] font-mono text-[#ede6df]/70 uppercase tracking-widest px-2 py-1 rounded-full bg-[#141312]/80 backdrop-blur-md border border-white/10 hidden sm:inline-block">
-                      {language === 'ar' ? 'هندسة نظم' : 'SYSTEM ARCHITECT'}
+                      {language === 'ar' ? 'تطوير النظم' : 'WEB & SYSTEMS'}
                     </span>
                   </div>
                 </>
@@ -111,11 +122,11 @@ export const PersonalIntro: React.FC<PersonalIntroProps> = ({
                     <div className="flex items-center gap-1.5">
                       <Terminal className="w-3.5 h-3.5 text-[#248a61]" />
                       <span className="font-mono text-[10px] uppercase">
-                        {language === 'ar' ? 'مهندس برمجيات' : 'FULL STACK DEV'}
+                        {language === 'ar' ? 'مطور برمجيات' : 'SOFTWARE DEVELOPER'}
                       </span>
                     </div>
                     <span className="font-semibold uppercase text-[10px] tracking-wider text-[#248a61]">
-                      {language === 'ar' ? 'كانور، الهند' : 'KANNUR, IN'}
+                      {language === 'ar' ? 'كانور، كيرالا، الهند' : 'KANNUR, IN'}
                     </span>
                   </div>
                 </div>

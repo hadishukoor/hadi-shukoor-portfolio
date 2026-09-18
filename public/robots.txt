@@ -1,0 +1,5 @@
+# Robots.txt for Mohammad Hadi Shukoor Portfolio (https://hadishukoor.com)
+User-agent: *
+Allow: /
+
+Sitemap: https://hadishukoor.com/sitemap.xml

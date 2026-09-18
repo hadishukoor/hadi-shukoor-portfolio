@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { HeroBackdrop, RegistrationCorner } from './graphics/ArchitecturalDecor';
 
 interface HeroProps {
   onExploreWork: () => void;
@@ -88,6 +89,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenContact }) => {
         }}
       />
 
+      {/* Subtle Architectural & Orbital Backdrop (Low Opacity, Atmospheric) */}
+      <HeroBackdrop isRTL={isRTL} />
+
       {/* Noise grain overlay */}
       <canvas
         ref={canvasRef}
@@ -111,25 +115,18 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenContact }) => {
         className="absolute bottom-1/4 right-1/5 w-80 h-80 rounded-full pointer-events-none z-[3] blur-3xl opacity-20 bg-[#9ac7b3]"
       />
 
-      {/* Corner geometric brackets - responsive editorial frame */}
-      {/* Top-Left Bracket */}
-      <div className="absolute top-20 sm:top-24 md:top-28 left-4 sm:left-6 md:left-8 z-[6] pointer-events-none opacity-35">
-        <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 border-l-2 border-t-2 border-[#248a61]/60 rounded-tl-xs sm:rounded-tl-sm" />
+      {/* Corner architectural registration brackets - precision drafting frame */}
+      <div className="absolute top-20 sm:top-24 md:top-28 left-3 sm:left-6 md:left-8 z-[6] pointer-events-none">
+        <RegistrationCorner position="top-left" size={22} className="w-4 h-4 sm:w-5 sm:h-5 opacity-70" />
       </div>
-
-      {/* Top-Right Bracket */}
-      <div className="absolute top-20 sm:top-24 md:top-28 right-4 sm:right-6 md:right-8 z-[6] pointer-events-none opacity-35">
-        <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 border-r-2 border-t-2 border-[#248a61]/60 rounded-tr-xs sm:rounded-tr-sm" />
+      <div className="absolute top-20 sm:top-24 md:top-28 right-3 sm:right-6 md:right-8 z-[6] pointer-events-none">
+        <RegistrationCorner position="top-right" size={22} className="w-4 h-4 sm:w-5 sm:h-5 opacity-70" />
       </div>
-
-      {/* Bottom-Left Bracket */}
-      <div className="absolute bottom-20 sm:bottom-22 md:bottom-24 left-4 sm:left-6 md:left-8 z-[6] pointer-events-none opacity-35">
-        <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 border-l-2 border-b-2 border-[#248a61]/60 rounded-bl-xs sm:rounded-bl-sm" />
+      <div className="absolute bottom-16 sm:bottom-22 md:bottom-24 left-3 sm:left-6 md:left-8 z-[6] pointer-events-none">
+        <RegistrationCorner position="bottom-left" size={22} className="w-4 h-4 sm:w-5 sm:h-5 opacity-70" />
       </div>
-
-      {/* Bottom-Right Bracket */}
-      <div className="absolute bottom-20 sm:bottom-22 md:bottom-24 right-4 sm:right-6 md:right-8 z-[6] pointer-events-none opacity-35">
-        <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 border-r-2 border-b-2 border-[#248a61]/60 rounded-br-xs sm:rounded-br-sm" />
+      <div className="absolute bottom-16 sm:bottom-22 md:bottom-24 right-3 sm:right-6 md:right-8 z-[6] pointer-events-none">
+        <RegistrationCorner position="bottom-right" size={22} className="w-4 h-4 sm:w-5 sm:h-5 opacity-70" />
       </div>
 
       {/* Vertical side running identity badge (Desktop) */}
@@ -144,7 +141,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenContact }) => {
               : 'font-poppins tracking-[0.25em] uppercase'
           }`}
         >
-          {language === 'ar' ? 'محمد هادي شكور — مهندس برمجيات وتطوير شامل' : 'Mohammad Hadi Shukoor — Full Stack Software Engineer'}
+          {language === 'ar' ? 'محمد هادي شكور — مطور برمجيات' : 'Mohammad Hadi Shukoor — Software Developer'}
         </span>
       </div>
 
@@ -187,53 +184,59 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenContact }) => {
         <div className="overflow-hidden mb-4 md:mb-5 select-none w-full max-w-4xl">
           {language === 'en' ? (
             <h1 className="flex flex-col items-center justify-center text-[13vw] sm:text-[10.5vw] md:text-[8vw] lg:text-[7.2vw] leading-[0.88] font-barlow font-black text-[#363636] tracking-[-0.03em] uppercase">
-              {titleLinesEN.map((line, lineIdx) => (
-                <span
-                  key={line.lineId}
-                  className="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 md:gap-x-6"
-                >
-                  {line.words.map((wordGroup, wIdx) => (
-                    <span key={wIdx} className="inline-flex">
-                      {wordGroup.chars.map((char, charIdx) => {
-                        const totalIdx = lineIdx * 10 + wIdx * 5 + charIdx;
-                        return (
-                          <span
-                            key={charIdx}
-                            className="inline-block transition-transform duration-300 hover:text-[#248a61] hover:-translate-y-2 cursor-default"
-                            style={{
-                              transitionDelay: `${totalIdx * 25}ms`,
-                              filter: 'drop-shadow(0 8px 16px rgba(54, 54, 54, 0.1))',
-                            }}
-                          >
-                            {char}
-                          </span>
-                        );
-                      })}
-                    </span>
-                  ))}
-                </span>
-              ))}
+              <span className="sr-only">Mohammad Hadi Shukoor — Software Developer</span>
+              <span aria-hidden="true" className="flex flex-col items-center justify-center">
+                {titleLinesEN.map((line, lineIdx) => (
+                  <span
+                    key={line.lineId}
+                    className="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 md:gap-x-6"
+                  >
+                    {line.words.map((wordGroup, wIdx) => (
+                      <span key={wIdx} className="inline-flex">
+                        {wordGroup.chars.map((char, charIdx) => {
+                          const totalIdx = lineIdx * 10 + wIdx * 5 + charIdx;
+                          return (
+                            <span
+                              key={charIdx}
+                              className="inline-block transition-transform duration-300 hover:text-[#248a61] hover:-translate-y-2 cursor-default"
+                              style={{
+                                transitionDelay: `${totalIdx * 25}ms`,
+                                filter: 'drop-shadow(0 8px 16px rgba(54, 54, 54, 0.1))',
+                              }}
+                            >
+                              {char}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    ))}
+                  </span>
+                ))}
+              </span>
             </h1>
           ) : (
             <h1 className="flex flex-col items-center justify-center text-[13vw] sm:text-[10.5vw] md:text-[8vw] lg:text-[7.2vw] leading-[0.98] font-barlow font-black text-[#363636] tracking-normal">
-              {titleLinesAR.map((line, lineIdx) => (
-                <span
-                  key={line.lineId}
-                  className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 md:gap-x-8"
-                >
-                  {line.words.map((word, wIdx) => (
-                    <span
-                      key={wIdx}
-                      className="inline-block transition-transform duration-300 hover:text-[#248a61] hover:-translate-y-2 cursor-default"
-                      style={{
-                        filter: 'drop-shadow(0 8px 16px rgba(54, 54, 54, 0.1))',
-                      }}
-                    >
-                      {word}
-                    </span>
-                  ))}
-                </span>
-              ))}
+              <span className="sr-only">محمد هادي شكور — مطور برمجيات (Software Developer)</span>
+              <span aria-hidden="true" className="flex flex-col items-center justify-center">
+                {titleLinesAR.map((line, lineIdx) => (
+                  <span
+                    key={line.lineId}
+                    className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 md:gap-x-8"
+                  >
+                    {line.words.map((word, wIdx) => (
+                      <span
+                        key={wIdx}
+                        className="inline-block transition-transform duration-300 hover:text-[#248a61] hover:-translate-y-2 cursor-default"
+                        style={{
+                          filter: 'drop-shadow(0 8px 16px rgba(54, 54, 54, 0.1))',
+                        }}
+                      >
+                        {word}
+                      </span>
+                    ))}
+                  </span>
+                ))}
+              </span>
             </h1>
           )}
         </div>

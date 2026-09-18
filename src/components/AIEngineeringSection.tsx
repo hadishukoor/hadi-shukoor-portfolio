@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Sparkles, CheckCheck, Eye, RefreshCw, ShieldAlert, Cpu, Quote } from 'lucide-react';
 
 export const AIEngineeringSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   const getStepIcon = (idx: number) => {
     switch (idx) {
@@ -62,7 +62,7 @@ export const AIEngineeringSection: React.FC = () => {
 
           <div className="shrink-0 flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/15 text-xs font-poppins font-semibold uppercase tracking-wider text-white">
             <span className="w-2 h-2 rounded-full bg-[#248a61] animate-pulse" />
-            <span>Disciplined AI Integration</span>
+            <span>{language === 'ar' ? 'تكامل منضبط مع الذكاء الاصطناعي' : 'Disciplined AI Integration'}</span>
           </div>
         </div>
 

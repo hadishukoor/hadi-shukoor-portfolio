@@ -82,8 +82,8 @@ export const SKILL_CATEGORIES_EN: SkillCategory[] = [
 
 export const SKILL_CATEGORIES_AR: SkillCategory[] = [
   {
-    title: "معمارية الواجهات وتطوير الفرونت إند",
-    description: "تصميم المكونات التفاعلية، وإدارة الحالة المنضبطة، وتجارب الاستخدام السلسة.",
+    title: "معمارية واجهات المستخدم (Frontend)",
+    description: "تصميم المكونات التفاعلية، إدارة الحالة المنضبطة، وتجارب استخدام سريعة ومتجاوبة.",
     skills: [
       { name: "React.js / Next.js", level: "مستوى إنتاجي" },
       { name: "TypeScript (Strict)", level: "متقدم" },
@@ -93,8 +93,8 @@ export const SKILL_CATEGORIES_AR: SkillCategory[] = [
     ]
   },
   {
-    title: "الواجهات الخلفية والخدمات السحابية",
-    description: "بناء واجهات REST موثوقة، وقواعد عمل المنظومة، وتوليد المستندات الآلي.",
+    title: "الواجهات الخلفية والخدمات (Backend)",
+    description: "بناء واجهات REST APIs موثوقة، منطق الأعمال، وتوليد المستندات البرمجي.",
     skills: [
       { name: "Node.js & Express.js", level: "مستوى إنتاجي" },
       { name: "ASP.NET Core (C#)", level: "مستوى إنتاجي" },
@@ -104,19 +104,19 @@ export const SKILL_CATEGORIES_AR: SkillCategory[] = [
     ]
   },
   {
-    title: "قواعد البيانات واستقرار البيانات",
-    description: "التطبيع العلائقي، وتصميم المخططات المهيكلة، وتحسين استعلامات الأداء.",
+    title: "قواعد البيانات وهندسة التخزين",
+    description: "التصميم العلائقي المعياري، المخططات المهيكلة، وتحسين أداء الاستعلامات.",
     skills: [
       { name: "MySQL / قواعد بيانات علائقية", level: "مستوى إنتاجي" },
-      { name: "MongoDB / وثائقية", level: "متقدم" },
+      { name: "MongoDB / قواعد مستندية", level: "متقدم" },
       { name: "هيكلة وتطبيع البيانات", level: "متقدم" },
       { name: "تحسين الاستعلامات والفهارس", level: "متقن" },
       { name: "Entity Framework Core", level: "مستوى إنتاجي" }
     ]
   },
   {
-    title: "الأمان وإدارة الصلاحيات",
-    description: "إدارة جلسات العمل الصارمة، والتحكم بالوصول المبني على الأدوار.",
+    title: "الأمان وإدارة الصلاحيات (Security & RBAC)",
+    description: "إدارة الجلسات اللامركزية، وتطبيق نماذج التحكم بالوصول المستند إلى الأدوار.",
     skills: [
       { name: "إدارة رموز JWT ودورة حياتها", level: "مستوى إنتاجي" },
       { name: "نظام الصلاحيات المتعدد (RBAC)", level: "مستوى إنتاجي" },
@@ -127,7 +127,7 @@ export const SKILL_CATEGORIES_AR: SkillCategory[] = [
   },
   {
     title: "الأنظمة الدولية وثنائية اللغة",
-    description: "خبرة تسليم حلول برمجية لأسواق الخليج العربي (الإمارات، عُمان) وواجهات متكاملة الاتجاهين.",
+    description: "خبرة في تسليم حلول برمجية لأسواق الخليج العربي (الإمارات، عُمان) مع دعم كامل لاتجاهات RTL/LTR.",
     skills: [
       { name: "واجهات ثنائية الاتجاه (RTL / LTR)", level: "مستوى إنتاجي" },
       { name: "تعريب احترافي بالعربية الفصحى", level: "مستوى إنتاجي" },
@@ -137,8 +137,8 @@ export const SKILL_CATEGORIES_AR: SkillCategory[] = [
     ]
   },
   {
-    title: "أدوات التشغيل وهندسة البرمجيات",
-    description: "إدارة الإصدارات، والبيئات الحاوية، وهندسة الكود المعتمدة على أدوات الذكاء الاصطناعي.",
+    title: "أدوات التشغيل وهندسة النظم (DevOps)",
+    description: "إدارة الإصدارات، الحاويات، وبيئات التشغيل السحابي المنضبطة.",
     skills: [
       { name: "إدارة مستودعات Git & GitHub", level: "متقدم" },
       { name: "حاويات Docker", level: "متقن" },

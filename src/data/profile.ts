@@ -22,7 +22,7 @@ export interface ContactInfo {
 
 export const CONTACT_INFO: ContactInfo = {
   name: "Mohammad Hadi Shukoor",
-  role: "Full Stack Software Engineer",
+  role: "Software Developer",
   email: "hadishukoor111@gmail.com",
   phone: "+919656165141",
   phoneFormatted: "+91 9656165141",
@@ -70,7 +70,7 @@ export interface ProfileInfo {
 export const PROFILE: ProfileInfo = {
   name: "MOHAMMAD HADI SHUKOOR",
   shortName: "HADI SHUKOOR",
-  role: "Full Stack Software Engineer",
+  role: "Software Developer",
   location: "Kannur, Kerala, India",
   email: "hadishukoor111@gmail.com",
   phone: "+91 9656165141",
@@ -83,14 +83,14 @@ export const PROFILE: ProfileInfo = {
   // Modifying this single property updates the profile image across all components
   profilePhoto: "/images/profile-portrait.png",
   summary: [
-    "Full Stack Software Engineer with hands-on experience engineering complete digital systems around real business requirements.",
+    "Software Developer with hands-on experience engineering complete digital systems around real business requirements.",
     "Specialized in end-to-end software delivery: taking manual or operational business processes and turning them into automated software workflows, REST API architectures, and normalized relational persistence.",
     "Proven delivery across enterprise ERP workflows and dual-interface platforms (MAGNAVOLT), bilingual RTL customer verification portals (SANDS PPF), and document intelligence systems."
   ],
   bio: {
-    heading: "A SOFTWARE ENGINEER WHO BUILDS SYSTEMS.",
+    heading: "A SOFTWARE DEVELOPER WHO BUILDS SYSTEMS.",
     paragraphs: [
-      "I am Mohammad Hadi Shukoor, a Full Stack Software Engineer based in Kannur, Kerala, India.",
+      "I am Mohammad Hadi Shukoor, a Software Developer based in Kannur, Kerala, India.",
       "I build web applications, APIs, database-backed systems, and business workflows.",
       "I enjoy taking a requirement, understanding the underlying problem, designing the system, building it, debugging it, and getting it deployed."
     ]
@@ -103,7 +103,7 @@ export interface FloatingTag {
 }
 
 export const HERO_TAGS: FloatingTag[] = [
-  { label: "FULL STACK", sub: "ENGINEER" },
+  { label: "FULL STACK", sub: "DEVELOPER" },
   { label: "BUSINESS AUTOMATION" },
   { label: "ERP / CRM SYSTEMS" },
   { label: "APIs & INTEGRATIONS" },

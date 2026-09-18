@@ -187,7 +187,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         <button
           onClick={onClose}
           className="absolute top-5 right-5 rtl:right-auto rtl:left-5 sm:top-6 sm:right-6 rtl:sm:right-auto rtl:sm:left-6 p-2 rounded-full bg-[#363636]/10 hover:bg-[#248a61] text-[#363636] hover:text-white transition-colors cursor-pointer z-10"
-          aria-label="Close dialog"
+          aria-label={language === 'ar' ? 'إغلاق النافذة' : 'Close dialog'}
         >
           <X className="w-5 h-5" />
         </button>
@@ -424,7 +424,10 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             </div>
 
             <div>
-              <h2 className="text-2xl sm:text-3xl font-barlow font-black text-[#363636] uppercase tracking-tight">
+              <h2
+                id="contact-modal-title"
+                className="text-2xl sm:text-3xl font-barlow font-black text-[#363636] uppercase tracking-tight"
+              >
                 {language === 'ar' ? 'متطلبات المشروع ونطاق العمل' : 'PROJECT REQUIREMENTS & SCOPE'}
               </h2>
               <p className="text-xs font-poppins text-[#363636]/75 mt-1">
@@ -520,8 +523,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     <option value="Automation & Integration">
                       {language === 'ar' ? 'أتمتة وتكامل سير العمل' : 'Automation & Workflows'}
                     </option>
-                    <option value="Software Engineering Role">
-                      {language === 'ar' ? 'فرصة عمل هندسي / تعاقد' : 'Software Engineering Role'}
+                    <option value="Software Developer Role">
+                      {language === 'ar' ? 'فرصة عمل تطوير برمجيات / تعاقد' : 'Software Developer Role'}
                     </option>
                     <option value="Other">
                       {language === 'ar' ? 'أخرى' : 'Other'}
