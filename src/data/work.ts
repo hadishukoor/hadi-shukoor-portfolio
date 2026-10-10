@@ -5,6 +5,17 @@ export interface CaseStudySection {
 }
 
 export interface ProjectItem {
+  presentation?: {
+    fullTitle: string;
+    secondaryStatus?: string;
+    detailRole?: string;
+    action: string;
+    architectureTitle: string;
+    architectureSteps: string[];
+    architectureNote: string;
+    technologies: string[];
+    links?: { label: string; url: string; note?: string }[];
+  };
   id: string;
   number: string;
   title: string;
@@ -36,167 +47,214 @@ export interface ProjectItem {
 
 export const SELECTED_PROJECTS: ProjectItem[] = [
   {
-    id: "magnavolt-erp",
-    number: "01",
-    title: "MAGNAVOLT",
-    headline: "Integrated ERP, Operations Platform & Corporate Portal",
-    category: "ENTERPRISE SOFTWARE • DUAL-INTERFACE ERP • BUSINESS WORKFLOWS",
-    role: "Full Stack Developer",
-    status: "CURRENT / ONGOING",
-    location: "MAGNAVOLT Technical Services L.L.C - S.P.C (UAE)",
-    countryBadge: "UAE • INTERNATIONAL PROJECT",
-    stack: [
+    "id": "magnavolt-erp",
+    "number": "01",
+    "title": "MAGNAVOLT",
+    "headline": "Business Website & Service Management Platform",
+    "category": "Client Project · Industrial Equipment & Technical Services",
+    "role": "Sole Full-Stack Developer",
+    "status": "Deployed · Ongoing Maintenance",
+    "location": "United Arab Emirates",
+    "countryBadge": "UAE · Client Project",
+    "stack": [
       "React",
       "TypeScript",
       "ASP.NET Core",
-      "C#",
       "MySQL",
-      "Entity Framework Core",
-      "REST APIs",
-      "QuestPDF",
-      "JWT Auth",
-      "Tailwind CSS",
-      "TanStack Query"
+      "Docker"
     ],
-    summary:
-      "End-to-end design and engineering of an enterprise operational platform for MAGNAVOLT Technical Services (UAE). Unites a customer-facing corporate website with an internal ERP encompassing dedicated Admin and Technician panels, an 8-stage service lifecycle, rapid QuickFix direct billing, programmatic QuestPDF document generation, and normalized relational persistence.",
-    detailedDescription: [
-      "Architected and engineered the complete digital operating system from the ground up, connecting public customer inquiries directly to backend triage, dispatch, and billing queues.",
-      "Engineered a dual-interface system separating administrative command (dispatch, inventory, quotation/invoice approvals) from field execution (technician job queue, status updates, execution logs).",
-      "Built two synchronized operational pipelines: a comprehensive 8-stage lifecycle (Inquiry → Ticket → Dispatch → Execution → Quotation → Approval → Invoicing → Settlement) and an expedited QuickFix direct-invoice workflow for rapid service requests.",
-      "Developed a high-performance programmatic document generation engine using QuestPDF, creating deterministic corporate invoices and quotations with dynamic tax (UAE VAT) calculations and signatories.",
-      "Designed normalized relational database schemas using Entity Framework Core and MySQL, secured by stateless JWT authentication, Role-Based Access Control (RBAC), and traceable audit logs."
+    "summary": "Designed, developed and deployed a corporate website and service-management platform for a UAE technical-services business, connecting service requests, technician workflows, customer records, quotations, invoicing and payment tracking.",
+    "detailedDescription": [
+      "I designed, developed and deployed MAGNAVOLT’s public website and service-management platform as the sole full-stack developer, and continue to maintain it."
     ],
-    workflowStages: [
-      "Public Customer Inquiry",
-      "Service Request Triage",
-      "Ticket Creation & Dispatch",
-      "Technician Service Execution",
-      "Dynamic Quotation Creation",
-      "Client & Admin Approval",
-      "Invoice Issuance",
-      "Payment Settlement"
-    ],
-    quickFixWorkflow: [
-      "Customer Service Request",
-      "Direct Service Confirmation",
-      "Direct Invoice Generation",
-      "Payment Settlement"
-    ],
-    modules: [
-      "Service Requests (Intake & Triage)",
-      "Service Tickets & Operations",
-      "Customers Directory & Locations",
-      "Companies Management",
-      "Staff & Technician Roster",
-      "Technician Dispatch & Assignment",
-      "Equipment & Machinery Tracking",
-      "Spare Parts Inventory",
-      "Dynamic Quotations & Approvals",
-      "Automated Invoicing",
-      "Payments & Financial Settlement",
-      "Company & Document Settings",
-      "Traceable Audit Event Logs"
-    ],
-    adminCapabilities: [
-      "Central command dashboard for live ticket status, triage, and workload distribution",
-      "Technician dispatch assigning jobs based on technical specialization and location",
-      "Customer account management with multi-branch company support and service history",
-      "Spare parts inventory tracking integrated directly with quotation line items",
-      "Quotation review, commercial margin adjustments, and legal terms configuration",
-      "Invoice issuance with sequential numbering and automated VAT calculation",
-      "Financial settlement reconciliation and real-time payment status tracking",
-      "System-wide configuration, company profiles, and traceable audit log inspection"
-    ],
-    technicianCapabilities: [
-      "Role-restricted mobile-first portal with dedicated technician authentication",
-      "Real-time queue of assigned service requests and technical work orders",
-      "Detailed job briefs with customer contacts, equipment specs, and location coordinates",
-      "Job status progression tracking (Assigned → In Progress → Work Completed)",
-      "Field documentation: logging technical service notes, part replacements, and hours",
-      "Instant handoff of completed technical jobs to the admin quotation and billing pipeline"
-    ],
-    engineeringHighlights: [
-      "Public-to-ERP bridge: secure REST API channels corporate website customer requests into internal ticket queues",
-      "Dual-interface architecture: strict Admin vs Technician RBAC enforced at API endpoints and UI routes",
-      "Dual workflow engines: full 8-stage service operations pipeline plus expedited QuickFix direct billing",
-      "Deterministic PDF generation with QuestPDF: dynamic company letterhead, tax breakdowns, and terms",
-      "Normalized relational database: clean EF Core models and MySQL schema covering 13+ operational domains",
-      "WhatsApp integration architecture: manual contextual dispatch (completed) and automated Meta Business API (in development)"
-    ],
-    caseStudySections: [
+    "engineeringHighlights": [],
+    "link": "https://magnavoltuae.com/",
+    "githubUrl": null,
+    "statusNote": "Production deployment with ongoing maintenance.",
+    "caseStudySections": [
       {
-        title: "Public Corporate Website",
-        badge: "Implemented",
-        points: [
-          "Customer-facing digital presentation for MAGNAVOLT Technical Services L.L.C - S.P.C showcasing industrial services, machinery capabilities, and technical solutions.",
-          "Interactive customer request submission with real-time form validation.",
-          "Direct REST API integration securely channeling public customer requests into the internal ERP ticket triage queue without manual data entry.",
-          "Responsive, high-performance UI styled to establish corporate credibility and technical authority."
+        "title": "Business problem",
+        "points": [
+          "MAGNAVOLT Technical Services L.L.C - S.P.C needed to connect service, technician, customer, commercial and administrative records while presenting its industrial equipment and technical services publicly."
         ]
       },
       {
-        title: "Admin Command Platform",
-        badge: "Implemented",
-        points: [
-          "Comprehensive administrative interface for operational triage, customer account governance, and technician scheduling.",
-          "Dynamic technician dispatch assigning jobs based on availability and location context.",
-          "Full spare parts inventory management integrated with quotation line items and service tickets.",
-          "Commercial review workflow for quotations, invoice status transitions, and payment settlement confirmation.",
-          "Detailed audit log viewer capturing all critical system events with actor attribution."
+        "title": "My contribution",
+        "points": [
+          "Created the original application design and codebase as the sole developer, deployed the project and continue to maintain it.",
+          "Refined responsive administration and mobile-oriented technician interfaces, customer/company synchronization, staff lifecycle safeguards and authentication sessions.",
+          "Improved QuestPDF generation by embedding branding assets, avoiding dependencies on developer-machine file paths."
         ]
       },
       {
-        title: "Technician Execution Platform",
-        badge: "Implemented",
-        points: [
-          "Dedicated role-specific interface focused exclusively on field execution without administrative clutter.",
-          "Streamlined view of assigned technical jobs with real-time customer and location details.",
-          "Step-by-step job status progression from arrival and inspection through completion.",
-          "Field documentation: recording technical service notes, part replacements, and completion timestamps.",
-          "Automatic state synchronization triggering admin notification upon job sign-off."
+        "title": "Main workflows and capabilities",
+        "points": [
+          "Public website: services, spare parts, refurbished machinery, service requests, company information and contact.",
+          "Operations: service requests, diagnosis, assignment, job-status progression and technician workflows.",
+          "Commercial records: customers and company accounts, quotations, PDFs, invoices, VAT calculations, partial payments, balances, financial account views and customer statements.",
+          "Inventory and administration: spare-parts catalogue, stock tracking, supplier orders, job allocations, staff access, audit history and notifications.",
+          "These are documented application capabilities; adoption of every individual module in production has not been established."
         ]
       },
       {
-        title: "Backend, Database & Security",
-        badge: "Implemented",
-        points: [
-          "Built with ASP.NET Core and C# adhering to clean separation between API controllers, service logic, and data layers.",
-          "Normalized relational database designed with Entity Framework Core and MySQL across 13+ relational models.",
-          "Stateless JWT authentication paired with claim-based Role-Based Access Control (RBAC) protecting both endpoints and UI routes.",
-          "Structured audit logging capturing timestamps, actor IDs, state deltas, and IP metadata."
+        "title": "Architecture and engineering decisions",
+        "points": [
+          "React frontend → ASP.NET Core API → MySQL, with QuestPDF for business documents. Docker Compose runs on an Ubuntu VPS with Nginx and HTTPS.",
+          "Relational integrity connects service, customer, inventory and financial records. Business rules and financial calculations are enforced by the backend.",
+          "Guarded deletion preserves operational history; staff can be deactivated and reactivated. Persistent database storage supports application releases, and transactional document-number allocation protects numbering.",
+          "JWT authorization includes refresh-token/session lifecycle handling, expired-token handling and session revocation."
         ]
       },
       {
-        title: "Brand Foundation & Visual Identity",
-        badge: "Implemented",
-        points: [
-          "Established the digital visual identity for MAGNAVOLT from inception: brand aesthetic, color harmony, and typography.",
-          "Designed the corporate website and aligned the internal ERP interface to maintain consistent corporate credibility.",
-          "Engineered cohesive document stationery across all generated quotation and invoice PDFs."
-        ]
-      },
-      {
-        title: "My Role & Full Ownership",
-        badge: "Single Ownership",
-        points: [
-          "Sole developer responsible for end-to-end delivery: system architecture, frontend development (React + TypeScript), backend APIs (ASP.NET Core + C#), database schema design (EF Core + MySQL), document generation (QuestPDF), and corporate UI design.",
-          "Directly authored all business logic, workflow state transitions, security models, and API contracts."
+        "title": "Delivered outcome and verification",
+        "points": [
+          "A deployed corporate website and operations platform that brings service, commercial and administrative workflows into one connected application.",
+          "Recorded checks include frontend/backend builds and static checks, financial workflows, staff lifecycle contract and browser checks, session lifecycle checks, six business-document types, responsive layouts and a backup/restore test with matching row counts.",
+          "September 26, 2026 deployment records reported successful HTTP responses and healthy services. These historical checks do not establish current uptime or verification of every production feature.",
+          "The owner confirms production deployment and ongoing maintenance. Quantified business impact and a formal support SLA have not been established."
         ]
       }
     ],
-    metrics: [
-      { label: "Operational Modules", value: "13" },
-      { label: "Workflow Engines", value: "2 (Standard + QuickFix)" },
-      { label: "System Portals", value: "3 (Public + Admin + Tech)" }
+    "presentation": {
+      "fullTitle": "MAGNAVOLT — Business Website & Service Management Platform",
+      "action": "View Case Study",
+      "architectureTitle": "System architecture",
+      "architectureSteps": [
+        "React frontend",
+        "ASP.NET Core API",
+        "MySQL"
+      ],
+      "architectureNote": "QuestPDF business documents · Docker Compose · Ubuntu VPS · Nginx · HTTPS",
+      "technologies": [
+        "React",
+        "Vite",
+        "TypeScript",
+        "ASP.NET Core Web API / .NET 10",
+        "Entity Framework Core / Pomelo MySQL provider",
+        "MySQL 8",
+        "JWT / role-based authorization",
+        "QuestPDF",
+        "Docker / Docker Compose",
+        "Nginx / Ubuntu VPS",
+        "DigitalOcean / HTTPS",
+        "Git / GitHub"
+      ],
+      "links": [
+        {
+          "label": "View Website",
+          "url": "https://magnavoltuae.com/"
+        },
+        {
+          "label": "Operations Portal",
+          "url": "https://app.magnavoltuae.com/",
+          "note": "Requires authorized access; not a public demo."
+        }
+      ]
+    }
+  },
+  {
+    "id": "gem-bid-compliance",
+    "number": "02",
+    "title": "AI-Assisted Bid Compliance Platform",
+    "headline": "",
+    "category": "Upcoming Research & Design Project",
+    "role": "Research & System Design",
+    "status": "Research & Design",
+    "location": "GeM procurement context · India",
+    "stack": [
+      "React",
+      "Python/FastAPI",
+      "MongoDB"
     ],
-    link: null,
-    githubUrl: null,
-    statusNote: "Active Client System — Private Enterprise Repository (MAGNAVOLT Technical Services L.L.C - S.P.C)"
+    "summary": "Researching and designing an AI-assisted platform for reviewing bidder documents against tender eligibility requirements, combining proposed document extraction, rule-based checks and traceable evidence for human review.",
+    "detailedDescription": [
+      "An upcoming AI-assisted procurement decision-support platform designed to help evaluators review bidder documents against tender eligibility requirements. The proposed approach combines information extraction, structured validation and deterministic rule-based checks, with evidence traceability and human oversight."
+    ],
+    "engineeringHighlights": [],
+    "isUpcoming": true,
+    "link": null,
+    "githubUrl": null,
+    "statusNote": "Coming Soon · Implementation Not Started",
+    "caseStudySections": [
+      {
+        "title": "Current stage",
+        "points": [
+          "Research & Design — Pre-Implementation. Currently in research, planning and technical learning. Application implementation has not started; no working prototype or deployed demo is available.",
+          "The research paper is being prepared; it has not been submitted, accepted, published or peer-reviewed."
+        ]
+      },
+      {
+        "title": "Intended problem and audience",
+        "points": [
+          "The proposed platform aims to help procurement officers, bid evaluators and organizations compare bidder documents against tender eligibility requirements, initially in contexts such as India’s Government e-Marketplace.",
+          "No official GeM affiliation, certification, API integration or government-registry connection is established."
+        ]
+      },
+      {
+        "title": "My current contribution",
+        "points": [
+          "Research, system design, technical learning and preparation, project planning and research paper preparation.",
+          "I am listed as first author alongside other student authors and an assistant professor. Neither I nor my teammates have written or run application code."
+        ]
+      },
+      {
+        "title": "Proposed workflow — not yet implemented",
+        "points": [
+          "1. Upload a tender PDF and extract candidate eligibility requirements.",
+          "2. Have an administrator review, correct and approve the requirements.",
+          "3. Upload bidder documents and extract financial values, dates, certificates and eligibility information.",
+          "4. Validate structured data, then apply deterministic Python rules to the approved requirements.",
+          "5. Present preliminary findings with source-document and page references, compare bidders and generate a PDF report.",
+          "Planned outputs: Compliant · Non-Compliant · Needs Review. These would support human review, not final official procurement decisions."
+        ]
+      },
+      {
+        "title": "Proposed architecture and stack",
+        "points": [
+          "The proposed pipeline combines PDF processing, AI-assisted extraction, structured validation, deterministic rules, traceable evidence, bidder comparison and PDF reporting.",
+          "Gemini API is a candidate extraction provider, not a confirmed integration. Local models and hybrid approaches may also be evaluated."
+        ]
+      },
+      {
+        "title": "Planned evaluation and next steps",
+        "points": [
+          "The evaluation plan includes eight tender scenarios and 32 bidder dossiers. Proposed measurements cover extraction and compliance-check accuracy, processing and review time, failures and ambiguous inputs. No experiments or measured results are confirmed.",
+          "Research challenges include scanned PDFs, varying layouts, complex financial tables, ambiguous clauses, conflicting or missing information, sensitive-document protection, AI API cost/availability and reliable ground truth.",
+          "Next: complete technical preparation; finalize scope, architecture and data contracts; begin implementation; test modules and demonstrate a controlled end-to-end workflow; conduct the planned evaluation; consider deployment after verification.",
+          "OCR, multilingual processing, local vision-language models, advanced financial-table handling and authorized government-data integrations are possible later extensions, not committed scope."
+        ]
+      }
+    ],
+    "presentation": {
+      "fullTitle": "AI-Powered Integrated Bid Compliance Verification Platform for GeM Procurement",
+      "secondaryStatus": "Coming Soon · Implementation Not Started",
+      "detailRole": "Research, System Design & Technical Preparation",
+      "action": "View Project Concept",
+      "architectureTitle": "Proposed Workflow — Not Yet Implemented",
+      "architectureSteps": [
+        "Tender / bidder PDFs",
+        "PDF processing & AI-assisted extraction",
+        "Structured validation",
+        "Deterministic rules",
+        "Preliminary findings, evidence & reports"
+      ],
+      "architectureNote": "Proposed decision support with human review.",
+      "technologies": [
+        "React",
+        "Python / FastAPI",
+        "PyMuPDF / pdfplumber",
+        "Pydantic",
+        "Python rule engine",
+        "MongoDB",
+        "ReportLab",
+        "Docker",
+        "Gemini API (candidate provider)"
+      ]
+    }
   },
   {
     id: "sands-ppf",
-    number: "02",
+    number: "03",
     title: "SANDS PPF",
     headline: "Warranty & Operations Platform",
     category: "FULL STACK • CUSTOM WEB PLATFORM • WARRANTY & AUTOMATION",
@@ -240,110 +298,6 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
     link: null,
     githubUrl: null,
     statusNote: "Delivered Client Platform — Production In Use (Oman)"
-  },
-  {
-    id: "gem-bid-compliance",
-    number: "03",
-    title: "AI-POWERED INTEGRATED BID COMPLIANCE VERIFICATION PLATFORM FOR GEM PROCUREMENT",
-    headline: "Intelligent Document Intelligence & Compliance Verification Pipeline for GeM Bids",
-    category: "PROJECT • DOCUMENT INTELLIGENCE",
-    role: "Full Stack Developer",
-    status: "COMING SOON / IN DEVELOPMENT",
-    location: "System Architecture (In Development)",
-    countryBadge: "PROJECT",
-    isUpcoming: true,
-    stack: [
-      "React",
-      "Python / FastAPI",
-      "MongoDB or SQL Server",
-      "Gemini API",
-      "Python Doc Intelligence",
-      "Automated PDF Generation"
-    ],
-    proposedStack: [
-      { category: "Frontend", tech: "React" },
-      { category: "Backend", tech: "Python / FastAPI" },
-      { category: "Database", tech: "MongoDB or SQL Server" },
-      { category: "AI & Document Processing", tech: "Gemini API + Python document-processing libraries" },
-      { category: "Reporting", tech: "Automatic PDF generation" }
-    ],
-    summary:
-      "Upcoming enterprise software project currently in active engineering. Designed to simplify and accelerate tender and bid compliance verification for GeM (Government e-Marketplace) procurement. Features a planned end-to-end pipeline for tender specification upload, vendor bid document ingestion, AI-assisted parameter extraction, rule verification against statutory thresholds, a multi-bidder comparison dashboard, and deterministic compliance reports.",
-    detailedDescription: [
-      "Enterprise document intelligence platform engineered to streamline the end-to-end compliance review lifecycle.",
-      "The planned system addresses the complex, time-intensive evaluation process required for public procurement on the GeM portal.",
-      "Proposed workflow: Tender Requirements Upload → Company Bid Documents Upload → AI-assisted document reading & parameter extraction → Automated compliance checking against tender criteria → Qualified / Disqualified / Missing Requirements matrix → Multi-bidder Comparison Dashboard → Final Audit Report.",
-      "For example: when a tender requires a minimum turnover of ₹3 Crore, a valid registration certificate, and specific experience credentials, the planned system inspects uploaded balance sheets, certificates, and compliance declarations to identify whether statutory conditions are satisfied, missing, or breached.",
-      "Engineered with a planned decoupled architecture pairing a responsive React review dashboard with high-throughput Python/FastAPI microservices, document intelligence models, and automated PDF compliance reports."
-    ],
-    workflowStages: [
-      "Tender Requirements Upload",
-      "Company Bid Documents Upload",
-      "AI-Assisted Document Reading & Extraction",
-      "Compliance Checking Against Tender Rules",
-      "Qualified / Disqualified / Missing Matrix",
-      "Comparison Dashboard",
-      "Final Compliance Report"
-    ],
-    engineeringHighlights: [
-      "AI-assisted document intelligence using Gemini API and specialized Python extraction libraries",
-      "Rule verification engine evaluating financial limits (e.g. ₹3 Crore turnover), certifications, and experience",
-      "Structured schema transformation from unstructured multi-page bid documents and balance sheets",
-      "Comparison dashboard providing transparency across competing bids and tender clauses",
-      "Automated deterministic PDF compliance report generation for audit trails",
-      "High-performance asynchronous backend architecture using Python and FastAPI"
-    ],
-    caseStudySections: [
-      {
-        title: "Project Status & Scope",
-        badge: "In Development",
-        points: [
-          "Engineering platform currently under active development.",
-          "Demonstrates enterprise problem-solving across AI document intelligence, compliance verification, backend API engineering, database design, and automated reporting.",
-          "All workflows, architecture, and technology choices represent the planned engineering blueprint currently in development."
-        ]
-      },
-      {
-        title: "The Core Problem",
-        badge: "Procurement Bottleneck",
-        points: [
-          "Evaluating public procurement bids on portals like GeM requires tedious manual cross-referencing of hundreds of pages of complex bidder documents.",
-          "Manual checking of mandatory criteria—such as minimum turnover thresholds (e.g., ₹3 Crore), registration validity dates, and past experience proofs—is vulnerable to fatigue and human oversight.",
-          "Procurement committees lack a rapid, automated tool to flag missing documents, verify qualifications, and generate auditable comparative reports."
-        ]
-      },
-      {
-        title: "Proposed Solution & Planned Pipeline",
-        badge: "Planned Workflow",
-        points: [
-          "Tender Requirements Upload: Parsing RFP tender specifications to establish dynamic compliance rules and eligibility thresholds.",
-          "Company Bid Documents Upload: Ingestion of bidder balance sheets, certificates, CA declarations, and work completion orders.",
-          "AI Document Intelligence: Intelligent information extraction extracting figures, validities, and compliance declarations from PDFs.",
-          "Rule Verification Engine: Cross-evaluating extracted metrics against tender requirements to classify items as Qualified, Disqualified, or Missing.",
-          "Comparison Dashboard & Final Report: Side-by-side bidder analytics with automated PDF report generation."
-        ]
-      },
-      {
-        title: "Planned Technology Stack",
-        badge: "Proposed Stack",
-        points: [
-          "Frontend Interface: React (Responsive procurement dashboard and review portal).",
-          "Backend Microservices: Python / FastAPI (Asynchronous document handling and evaluation pipelines).",
-          "Data Storage: MongoDB or SQL Server (Structured tender rules, bidder profiles, and audit records).",
-          "AI & Document Intelligence: Gemini API combined with specialized Python document-processing libraries.",
-          "Reporting: Automatic programmatic PDF compliance generation."
-        ]
-      }
-    ],
-    metrics: [
-      { label: "Project Status", value: "Coming Soon / In Development" },
-      { label: "Target Domain", value: "GeM Procurement" },
-      { label: "Planned AI Engine", value: "Gemini + Python" },
-      { label: "Project Type", value: "Enterprise Software" }
-    ],
-    link: null,
-    githubUrl: null,
-    statusNote: "Engineering Project — In Active Development"
   },
   {
     id: "hera-lux",
@@ -421,167 +375,214 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
 
 export const SELECTED_PROJECTS_AR: ProjectItem[] = [
   {
-    id: "magnavolt-erp",
-    number: "01",
-    title: "MAGNAVOLT",
-    headline: "نظام ERP متكامل، منصة عمليات وبوابة شركات",
-    category: "برمجيات المؤسسات • نظام ERP مزدوج الواجهة • مسارات الأعمال",
-    role: "مطور برمجيات متكامل (Full Stack)",
-    status: "مشروع نشط / قيد التشغيل والإنتاج",
-    location: "ماجنافولت للخدمات الفنية (MAGNAVOLT Technical Services L.L.C - S.P.C - الإمارات)",
-    countryBadge: "الإمارات • مشروع دولي",
-    stack: [
+    "id": "magnavolt-erp",
+    "number": "01",
+    "title": "MAGNAVOLT",
+    "headline": "موقع الشركة ومنصة إدارة الخدمات",
+    "category": "مشروع عميل · معدات صناعية وخدمات فنية",
+    "role": "المطور الوحيد للمشروع (Full Stack)",
+    "status": "منشور للإنتاج · صيانة مستمرة",
+    "location": "الإمارات العربية المتحدة",
+    "countryBadge": "الإمارات · مشروع عميل",
+    "stack": [
       "React",
       "TypeScript",
       "ASP.NET Core",
-      "C#",
       "MySQL",
-      "Entity Framework Core",
-      "REST APIs",
-      "QuestPDF",
-      "JWT Auth",
-      "Tailwind CSS",
-      "TanStack Query"
+      "Docker"
     ],
-    summary:
-      "تصميم وهندسة منصة عمليات مؤسسية متكاملة لشركة ماجنافولت للخدمات الفنية (دولة الإمارات العربية المتحدة). تجمع المنصة بين موقع إلكتروني عام للشركات ونظام ERP داخلي يشمل بوابات مخصصة للإدارة والفنيين، ودورة حياة خدمة من 8 مراحل، ومسار الفوترة السريعة (QuickFix)، وتوليداً برمجياً دقيقاً للمستندات عبر QuestPDF، وقاعدة بيانات علائقية معيارية.",
-    detailedDescription: [
-      "هندسة وتطوير نظام التشغيل الرقمي المتكامل من البداية، ليربط استفسارات العملاء العامة مباشرة بقوائم الفرز والتوجيه والفوترة الخلفية.",
-      "بناء نظام مزدوج الواجهات يفصل تماماً بين لوحة القيادة والعمليات الإدارية (التوجيه، المخزون، واعتمادات الفواتير والعروض) وبوابة التنفيذ الميداني للفنيين.",
-      "إنشاء مساري عمل متزامنين: دورة حياة تشغيلية كاملة من 8 مراحل (الطلب ← الفرز ← التعيين ← التنفيذ ← عرض السعر ← الاعتماد ← إصدار الفاتورة ← التسوية) ومسار الفوترة المباشرة السريع (QuickFix).",
-      "تطوير محرك برمجي لتوليد المستندات عبر QuestPDF، ينشئ عروض أسعار وفواتير قانونية بأرقام تسلسلية وحسابات ضريبية ديناميكية (ضريبة القيمة المضافة في الإمارات).",
-      "تصميم مخططات قواعد بيانات علائقية معيارية عبر Entity Framework Core و MySQL، مؤمنة بمصادقة JWT اللامركزية والتحكم في الوصول حسب الأدوار (RBAC) وسجلات تدقيق كاملة."
+    "summary": "صممت وطورت ونشرت موقعاً مؤسسياً ومنصة لإدارة الخدمات لشركة خدمات فنية في الإمارات، تربط طلبات الخدمة ومهام الفنيين وسجلات العملاء وعروض الأسعار والفواتير وتتبع الدفعات.",
+    "detailedDescription": [
+      "صممت وطورت ونشرت موقع MAGNAVOLT العام ومنصة إدارة الخدمات بصفتي المطور الوحيد للمشروع، وأواصل صيانته."
     ],
-    workflowStages: [
-      "استقبال استفسارات العملاء العامة",
-      "فرز وتصنيف طلبات الخدمة",
-      "إنشاء التذكرة وتعيين الفني",
-      "تنفيذ الخدمة الميدانية وتسجيل الملاحظات",
-      "إنشاء عروض الأسعار ديناميكياً",
-      "اعتماد العميل والإدارة",
-      "إصدار الفاتورة الضريبية الرسمية",
-      "تسوية الدفعات المالية والأرشفة"
-    ],
-    quickFixWorkflow: [
-      "طلب خدمة العملاء المباشر",
-      "تأكيد الخدمة المباشرة",
-      "توليد الفاتورة المباشرة",
-      "تسوية الدفعات"
-    ],
-    modules: [
-      "طلبات الخدمة (الفرز والتصنيف)",
-      "تذاكر الخدمة والعمليات",
-      "دليل العملاء والمواقع",
-      "إدارة الشركات والفروع",
-      "سجل الفنيين والموظفين",
-      "جدولة وتوجيه الفنيين",
-      "تتبع المعدات والآلات",
-      "مخزون قطع الغيار",
-      "عروض الأسعار والاعتمادات",
-      "الفوترة المؤتمتة وحساب الضرائب",
-      "المدفوعات والتسوية المالية",
-      "إعدادات الشركة والمستندات",
-      "سجلات تدقيق الأحداث المتتبعة"
-    ],
-    adminCapabilities: [
-      "لوحة قيادة مركزية لمتابعة حالات التذاكر والفرز وتوزيع أعباء العمل فورياً",
-      "توجيه الفنيين وتعيين المهام بحسب التخصص الفني ونطاق الموقع الجغرافي",
-      "إدارة حسابات العملاء والشركات متعددة الفروع مع سجل الخدمات الكامل",
-      "تتبع مخزون قطع الغيار وربطه مباشرة ببنود عروض الأسعار وتذاكر الصيانة",
-      "مراجعة عروض الأسعار، ضبط هوامش الربح التجارية، وصياغة الشروط القانونية",
-      "إصدار الفواتير بأرقام تسلسلية واحتساب آلي لضريبة القيمة المضافة",
-      "مطابقة التسويات المالية ومتابعة حالات الدفع في الوقت الفعلي",
-      "إعدادات النظام الشاملة، ملفات الشركات، وفحص سجلات التدقيق بدقة"
-    ],
-    technicianCapabilities: [
-      "بوابة مخصصة للهواتف المحمولة محمية بنظام مصادقة خاص بالفنيين الميدانيين",
-      "قائمة فورية لطلبات الخدمة وأوامر العمل الفنية المسندة للفني",
-      "ملخصات تفصيلية للمهام تشمل بيانات العميل، مواصفات المعدة، وإحداثيات الموقع",
-      "تتبع تدرج حالة المهمة خطوة بخطوة (تم التعيين ← قيد التنفيذ ← اكتمل العمل)",
-      "التوثيق الميداني: تسجيل الملاحظات الفنية، قطع الغيار المستبدلة، وساعات العمل",
-      "تحويل فوري للأعمال المكتملة إلى مسار الإدارة لإعداد عروض الأسعار والفوترة"
-    ],
-    engineeringHighlights: [
-      "جسر الربط بين الموقع ونظام ERP: واجهات REST API آمنة تحول طلبات الموقع مباشرة لتذاكر داخلية",
-      "معمارية مزدوجة الواجهة: تطبيق صارم لصلاحيات RBAC على مستوى الواجهات البرمجية والمسارات",
-      "محركا عمل متزامنان: دورة تشغيلية كاملة من 8 مراحل بالإضافة لمحرك الفوترة السريعة (QuickFix)",
-      "توليد مستندات دقيق عبر QuestPDF: ترويسة الشركة، تفصيل الضرائب، والشروط القانونية المعتمدة",
-      "قاعدة بيانات علائقية معيارية: نماذج EF Core ومخطط MySQL يغطي أكثر من 13 مجالاً تشغيلياً",
-      "بنية ربط واتساب: إرسال سياقي يدوي للمستندات، وتجهيز للبنية مع Meta Business API"
-    ],
-    caseStudySections: [
+    "engineeringHighlights": [],
+    "link": "https://magnavoltuae.com/",
+    "githubUrl": null,
+    "statusNote": "منشور للإنتاج مع صيانة مستمرة.",
+    "caseStudySections": [
       {
-        title: "الموقع الإلكتروني المؤسسي للشركة",
-        badge: "مكتمل في الإنتاج",
-        points: [
-          "واجهة رقمية رسمية لشركة ماجنافولت للخدمات الفنية (ذ.م.م - ش.ش.و) تستعرض الخدمات الهندسية والمعدات والحلول الفنية.",
-          "نموذج تفاعلي لتقديم طلبات الصيانة مع تحقق فوري من صحة البيانات والمدخلات.",
-          "تكامل مباشر عبر واجهات REST API يحول طلبات العملاء العامة إلى نظام الفرز والتذاكر الداخلي تلقائياً دون إدخال يدوي.",
-          "واجهة استخدام سريعة ومتجاوبة تعكس المصداقية المؤسسية للشركة واحترافيتها الهندسية."
+        "title": "احتياج العمل",
+        "points": [
+          "احتاجت شركة MAGNAVOLT Technical Services L.L.C - S.P.C إلى ربط سجلات الخدمات والفنيين والعملاء والحسابات التجارية والإدارة، مع عرض معداتها الصناعية وخدماتها الفنية للجمهور."
         ]
       },
       {
-        title: "منصة القيادة والإدارة التشغيلية",
-        badge: "مكتمل في الإنتاج",
-        points: [
-          "واجهة إدارية شاملة لفرز الطلبات، حوكمة حسابات العملاء، وجدولة الفنيين الميدانيين.",
-          "نظام توجيه وجدولة ديناميكي يسند المهام وفق توافر الفني وموقعه الجغرافي.",
-          "إدارة كاملة لمخزون قطع الغيار مرتبطة تلقائياً ببنود عروض الأسعار وتذاكر العمل.",
-          "مسار مراجعة تجاري متكامل للعروض، وانتقال حالات الفواتير، وتأكيد التسويات المالية.",
-          "عارض متقدم لسجلات التدقيق يسجل كافة الأحداث الهامة مع توثيق هوية المستخدم والوقت."
+        "title": "مساهمتي",
+        "points": [
+          "أنشأت التصميم الأصلي والكود البرمجي للمشروع بالكامل بصفتي المطور الوحيد، وتوليت النشر وأواصل الصيانة.",
+          "حسّنت واجهات الإدارة المتجاوبة ومهام الفنيين على الجوال، ومزامنة سجلات العملاء والشركات، وضوابط إدارة الموظفين وجلسات المصادقة.",
+          "حسّنت توليد مستندات QuestPDF بتضمين أصول الهوية البصرية، لإزالة الاعتماد على مسارات ملفات جهاز المطور."
         ]
       },
       {
-        title: "بوابة التنفيذ الميداني للفنيين",
-        badge: "مكتمل في الإنتاج",
-        points: [
-          "واجهة مخصصة للفنيين تركز حصراً على تنفيذ المهام الميدانية بعيداً عن التعقيد الإداري.",
-          "عرض مبسط ومنظم للمهام الفنية المسندة مع تفاصيل العملاء والمواقع وسجلات المعدات.",
-          "تحديث متدرج لحالة العمل من لحظة الوصول والمعاينة حتى اكتمال الصيانة بنجاح.",
-          "توثيق ميداني فوري: تسجيل الملاحظات الهندسية، القطع المستبدلة، وتوقيت الإنجاز.",
-          "مزامنة فورية للحالة تنبه فريق الإدارة فور اعتماد الفني لاكتمال العمل الميداني."
+        "title": "مسارات العمل والقدرات الرئيسية",
+        "points": [
+          "الموقع العام: الخدمات وقطع الغيار والآلات المجددة وطلبات الخدمة ومعلومات الشركة والتواصل.",
+          "التشغيل: طلبات الخدمة والتشخيص والتعيين وتحديث حالة العمل ومهام الفنيين.",
+          "السجلات التجارية: العملاء والشركات وعروض الأسعار وملفات PDF والفواتير وضريبة القيمة المضافة والدفعات الجزئية والأرصدة والحسابات المالية وكشوف العملاء.",
+          "المخزون والإدارة: كتالوج قطع الغيار والمخزون وطلبات الموردين وتخصيص القطع للمهام وصلاحيات الموظفين وسجل التدقيق والإشعارات.",
+          "هذه قدرات موثقة للتطبيق؛ لم يُثبت استخدام كل وحدة على حدة في بيئة الإنتاج."
         ]
       },
       {
-        title: "الواجهة الخلفية، قواعد البيانات، والأمان",
-        badge: "مكتمل في الإنتاج",
-        points: [
-          "تطوير باستخدام ASP.NET Core و C# مع فصل معماري نظيف بين وحدات التحكم والمنطق والبيانات.",
-          "قاعدة بيانات علائقية معيارية مصممة باستخدام Entity Framework Core و MySQL تضم أكثر من 13 نموذجاً علائقياً.",
-          "نظام مصادقة لا مركزي عبر JWT مع تحكم بالوصول مستند إلى الأدوار (RBAC) لحماية الواجهات البرمجية والمسارات.",
-          "سجلات تدقيق مهيكلة تسجل التوقيت الزمني، هويات المستخدمين، التغيرات في الحالة، وعناوين IP."
+        "title": "البنية التقنية والقرارات الهندسية",
+        "points": [
+          "واجهة React تتصل بواجهة ASP.NET Core API وقاعدة MySQL، مع QuestPDF للمستندات. يعمل Docker Compose على خادم Ubuntu VPS مع Nginx وHTTPS.",
+          "تربط العلاقات بين البيانات سجلات الخدمات والعملاء والمخزون والماليات. يفرض الخادم قواعد العمل والحسابات المالية.",
+          "يحافظ الحذف المقيد على السجل التشغيلي، مع تعطيل الموظفين وإعادة تفعيلهم. يستمر تخزين قاعدة البيانات خلال الإصدارات، وتُخصص أرقام المستندات ضمن معاملات قاعدة البيانات.",
+          "تشمل المصادقة JWT والصلاحيات حسب الأدوار وإدارة رموز التجديد والجلسات ومعالجة انتهاء الرموز وإلغاء الجلسات."
         ]
       },
       {
-        title: "الهوية البصرية والأسس التصميمية",
-        badge: "مكتمل في الإنتاج",
-        points: [
-          "تأسيس الهوية البصرية الرقمية لشركة ماجنافولت: الألوان المتناسقة والخطوط والمظهر المؤسسي الرصين.",
-          "تصميم الموقع المؤسسي وتوحيد مظهر نظام ERP الداخلي لضمان هوية متسقة وموثوقة.",
-          "تصميم وتطوير قوالب مستندات متناسقة لجميع عروض الأسعار وفواتير الـ PDF الصادرة."
-        ]
-      },
-      {
-        title: "دوري والمسؤولية الهندسية الكاملة",
-        badge: "مسؤولية منفردة شاملة",
-        points: [
-          "المطور الوحيد المسؤول عن التسليم الشامل: هندسة البنية، تطوير الواجهة الأمامية (React + TypeScript)، واجهات REST الخلفية (ASP.NET Core + C#)، مخطط قاعدة البيانات (EF Core + MySQL)، توليد المستندات (QuestPDF)، وتصميم الواجهات.",
-          "كتابة وتطوير كافة منطق الأعمال، انتقالات حالات مسارات العمل، النماذج الأمنية، وعقود الواجهات البرمجية."
+        "title": "المخرجات والتحقق المسجل",
+        "points": [
+          "موقع مؤسسي ومنصة عمليات منشوران، يجمعان مسارات الخدمات والأعمال والإدارة في تطبيق مترابط.",
+          "تشمل الفحوص المسجلة بناء الواجهة والخادم والفحوص الساكنة، والسيناريوهات المالية، وعقود إدارة الموظفين وفحوص المتصفح والجلسات، وستة أنواع من مستندات الأعمال، وأحجام شاشات متعددة، واختبار نسخ احتياطي واستعادة بأعداد صفوف متطابقة.",
+          "أفادت سجلات النشر بتاريخ 26 سبتمبر 2026 باستجابات HTTP ناجحة وخدمات سليمة آنذاك. لا تثبت هذه الفحوص التاريخية حالة التشغيل الحالية أو التحقق من كل ميزة في الإنتاج.",
+          "يؤكد المالك النشر للإنتاج والصيانة المستمرة. لا تتوفر نتائج كمية لأثر المشروع أو اتفاقية رسمية لمستوى الدعم."
         ]
       }
     ],
-    metrics: [
-      { label: "الوحدات التشغيلية", value: "13 وحدة متكاملة" },
-      { label: "محركات مسارات العمل", value: "2 (القياسي + الفوترة السريعة)" },
-      { label: "بوابات النظام", value: "3 (العامة + الإدارة + الفنيين)" }
+    "presentation": {
+      "fullTitle": "MAGNAVOLT — موقع الشركة ومنصة إدارة الخدمات",
+      "action": "عرض دراسة الحالة",
+      "architectureTitle": "بنية النظام",
+      "architectureSteps": [
+        "واجهة React",
+        "ASP.NET Core API",
+        "MySQL"
+      ],
+      "architectureNote": "مستندات QuestPDF · Docker Compose · Ubuntu VPS · Nginx · HTTPS",
+      "technologies": [
+        "React",
+        "Vite",
+        "TypeScript",
+        "ASP.NET Core Web API / .NET 10",
+        "Entity Framework Core / Pomelo MySQL provider",
+        "MySQL 8",
+        "JWT / role-based authorization",
+        "QuestPDF",
+        "Docker / Docker Compose",
+        "Nginx / Ubuntu VPS",
+        "DigitalOcean / HTTPS",
+        "Git / GitHub"
+      ],
+      "links": [
+        {
+          "label": "زيارة الموقع",
+          "url": "https://magnavoltuae.com/"
+        },
+        {
+          "label": "بوابة العمليات",
+          "url": "https://app.magnavoltuae.com/",
+          "note": "تتطلب صلاحية دخول؛ ليست عرضاً تجريبياً عاماً."
+        }
+      ]
+    }
+  },
+  {
+    "id": "gem-bid-compliance",
+    "number": "02",
+    "title": "منصة مساعدة بالذكاء الاصطناعي لمراجعة مطابقة العطاءات",
+    "headline": "",
+    "category": "مشروع بحث وتصميم قادم",
+    "role": "البحث وتصميم النظام",
+    "status": "البحث والتصميم",
+    "location": "سياق مشتريات GeM · الهند",
+    "stack": [
+      "React",
+      "Python/FastAPI",
+      "MongoDB"
     ],
-    link: null,
-    githubUrl: null,
-    statusNote: "نظام عميل نشط في الإنتاج — مستودع مؤسسي خاص (شركة ماجنافولت للخدمات الفنية)"
+    "summary": "أبحث وأصمم منصة تساعد في مراجعة وثائق المتقدمين للعطاءات مقابل متطلبات الأهلية، من خلال استخراج مقترح للمعلومات وفحوص قائمة على القواعد وأدلة قابلة للتتبع لدعم المراجعة البشرية.",
+    "detailedDescription": [
+      "منصة قادمة لدعم قرارات المشتريات بمساعدة الذكاء الاصطناعي، تهدف إلى مساعدة المقيمين في مراجعة وثائق المتقدمين مقابل متطلبات أهلية العطاء. يجمع النهج المقترح بين استخراج المعلومات والتحقق من البيانات المنظمة والفحص بقواعد محددة، مع تتبع الأدلة والإشراف البشري."
+    ],
+    "engineeringHighlights": [],
+    "isUpcoming": true,
+    "link": null,
+    "githubUrl": null,
+    "statusNote": "قريباً · لم يبدأ التنفيذ البرمجي",
+    "caseStudySections": [
+      {
+        "title": "المرحلة الحالية",
+        "points": [
+          "البحث والتصميم — قبل التنفيذ. العمل الحالي يشمل البحث والتخطيط والتعلم التقني. لم يبدأ تنفيذ التطبيق، ولا يتوفر نموذج أولي يعمل أو عرض منشور.",
+          "الورقة البحثية قيد الإعداد؛ لم تُقدّم أو تُقبل أو تُنشر أو تخضع للتحكيم العلمي."
+        ]
+      },
+      {
+        "title": "المشكلة المستهدفة والجمهور",
+        "points": [
+          "تهدف المنصة المقترحة إلى مساعدة مسؤولي المشتريات ومقيمي العطاءات والمؤسسات في مقارنة وثائق المتقدمين بمتطلبات الأهلية، مع تركيز أولي على سياقات مثل منصة المشتريات الحكومية الهندية GeM.",
+          "لا توجد صلة رسمية أو شهادة اعتماد أو تكامل API مع GeM أو اتصال بسجل حكومي مؤكد."
+        ]
+      },
+      {
+        "title": "مساهمتي الحالية",
+        "points": [
+          "البحث وتصميم النظام والتعلم والتحضير التقني وتخطيط المشروع وإعداد الورقة البحثية.",
+          "اسمي مدرج كمؤلف أول إلى جانب طلاب آخرين وأستاذ مساعد. لم أكتب أنا أو زملائي أي كود للتطبيق أو نشغله حتى الآن."
+        ]
+      },
+      {
+        "title": "مسار العمل المقترح — لم يُنفذ بعد",
+        "points": [
+          "1. رفع ملف PDF للعطاء واستخراج متطلبات أهلية أولية.",
+          "2. مراجعة المتطلبات وتصحيحها واعتمادها بواسطة مسؤول النظام.",
+          "3. رفع وثائق المتقدمين واستخراج القيم المالية والتواريخ والشهادات ومعلومات الأهلية.",
+          "4. التحقق من البيانات المنظمة ثم تطبيق قواعد Python محددة على المتطلبات المعتمدة.",
+          "5. عرض نتائج أولية مرتبطة بالمستند والصفحة، ومقارنة المتقدمين وتوليد تقرير PDF.",
+          "المخرجات المخططة: مطابق · غير مطابق · يحتاج إلى مراجعة. تدعم هذه النتائج المراجعة البشرية ولا تمثل قرارات مشتريات رسمية نهائية."
+        ]
+      },
+      {
+        "title": "البنية والتقنيات المقترحة",
+        "points": [
+          "يجمع المسار المقترح بين معالجة PDF والاستخراج بمساعدة الذكاء الاصطناعي والتحقق من البيانات والقواعد المحددة وتتبع الأدلة والمقارنة والتقارير.",
+          "Gemini API خيار مرشح للاستخراج وليس تكاملاً مؤكداً. قد تُقيّم نماذج محلية ونهج هجينة أيضاً."
+        ]
+      },
+      {
+        "title": "التقييم المخطط والخطوات التالية",
+        "points": [
+          "تتضمن خطة التقييم ثمانية سيناريوهات عطاء و32 ملفاً لمتقدمين. تشمل القياسات المقترحة دقة الاستخراج وفحص المطابقة وزمن المعالجة والمراجعة والإخفاقات والتعامل مع المدخلات الغامضة. لا توجد تجارب مكتملة أو نتائج مقاسة مؤكدة.",
+          "تشمل التحديات ملفات PDF الممسوحة وتنوع التخطيط والجداول المالية المعقدة وغموض الشروط وتعارض المعلومات أو نقصها وحماية الوثائق الحساسة وتكلفة خدمات الذكاء الاصطناعي وتوفرها ومراجع تقييم موثوقة.",
+          "الخطوات التالية: إكمال التحضير التقني؛ تحديد النطاق والبنية وعقود البيانات؛ بدء التنفيذ؛ اختبار الوحدات وعرض مسار كامل في بيئة مضبوطة؛ إجراء التقييم المخطط؛ والنظر في النشر بعد التحقق.",
+          "التعرف الضوئي على النصوص ومعالجة لغات متعددة والنماذج البصرية اللغوية المحلية ومعالجة الجداول المالية المتقدمة والتكاملات الحكومية المصرح بها اتجاهات مستقبلية محتملة وليست نطاقاً ملتزماً به."
+        ]
+      }
+    ],
+    "presentation": {
+      "fullTitle": "منصة متكاملة مدعومة بالذكاء الاصطناعي للتحقق من مطابقة العطاءات لمشتريات GeM",
+      "secondaryStatus": "قريباً · لم يبدأ التنفيذ البرمجي",
+      "detailRole": "البحث وتصميم النظام والتحضير التقني",
+      "action": "استعراض فكرة المشروع",
+      "architectureTitle": "مسار العمل المقترح — لم يُنفذ بعد",
+      "architectureSteps": [
+        "وثائق العطاء والمتقدمين PDF",
+        "معالجة PDF والاستخراج بمساعدة الذكاء الاصطناعي",
+        "التحقق من البيانات المنظمة",
+        "قواعد محددة",
+        "نتائج أولية وأدلة وتقارير"
+      ],
+      "architectureNote": "دعم مقترح للقرار مع مراجعة بشرية.",
+      "technologies": [
+        "React",
+        "Python / FastAPI",
+        "PyMuPDF / pdfplumber",
+        "Pydantic",
+        "Python rule engine",
+        "MongoDB",
+        "ReportLab",
+        "Docker",
+        "Gemini API (خيار مرشح)"
+      ]
+    }
   },
   {
     id: "sands-ppf",
-    number: "02",
+    number: "03",
     title: "SANDS PPF",
     headline: "منصة التحقق من الضمان وإدارة العمليات",
     category: "تطوير شامل • منصة ويب مخصصة • إدارة الضمان والأتمتة",
@@ -625,110 +626,6 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
     link: null,
     githubUrl: null,
     statusNote: "منصة عميل تم تسليمها — قيد التشغيل الإنتاجي (سلطنة عُمان)"
-  },
-  {
-    id: "gem-bid-compliance",
-    number: "03",
-    title: "منصة متكاملة مدعومة بالذكاء الاصطناعي للتحقق من مطابقة العطاءات لمشتريات GeM الحكومية",
-    headline: "استخراج ذكي للوثائق ومسار فحص ومطابقة العطاءات لمشتريات GeM الحكومية",
-    category: "مشروع • ذكاء معالجة المستندات",
-    role: "مطور برمجيات متكامل",
-    status: "قريباً / قيد التطوير",
-    location: "هندسة وبناء النظم (قيد التطوير)",
-    countryBadge: "مشروع",
-    isUpcoming: true,
-    stack: [
-      "React",
-      "Python / FastAPI",
-      "MongoDB أو SQL Server",
-      "Gemini API",
-      "Python Doc Intelligence",
-      "Automated PDF Generation"
-    ],
-    proposedStack: [
-      { category: "الواجهة الأمامية", tech: "React" },
-      { category: "الواجهة الخلفية", tech: "Python / FastAPI" },
-      { category: "قواعد البيانات", tech: "MongoDB أو SQL Server" },
-      { category: "الذكاء الاصطناعي ومعالجة الوثائق", tech: "Gemini API ومكتبات بايثون المتخصصة" },
-      { category: "إصدار التقارير", tech: "توليد تلقائي لملفات PDF" }
-    ],
-    summary:
-      "مشروع برمجي قيد التطوير الهندسي النشط. يهدف النظام إلى تسريع وتبسيط التحقق من مطابقة وثائق العطاءات في منصة المشتريات الحكومية الإلكترونية (GeM) من خلال استخراج ذكي للمتطلبات، وفحص آلي للأهلية والمستندات المطلوبة، وإصدار تقارير المطابقة الرسمية.",
-    detailedDescription: [
-      "منصة هندسية لمعالجة وذكاء المستندات قيد التطوير لتلبية متطلبات تدقيق العطاءات والمناقصات الحكومية.",
-      "يهدف النظام المخطط إلى أتمتة الإجراءات الطويلة واليدوية في فحص كراسات الشروط ووثائق الموردين المرفوعة عبر بوابة GeM.",
-      "مسار العمل المقترح: رفع كراسة شروط المناقصة ← رفع وثائق عطاءات الموردين ← استخراج المعايير بالذكاء الاصطناعي ← فحص المطابقة البرمجي ← مصفوفة الأهلية والنواقص والاستبعاد ← لوحة المقارنة والتقييم ← تقرير المطابقة النهائي.",
-      "مثال تطبيقي: إذا اشترطت المناقصة حداً أدنى لرأس المال قدره 3 كرور روبية مع رخصة تسجيل سارية وإثبات خبرة، يفحص النظام المخطط القوائم المالية والسجلات المرفوعة لتحديد ما إذا كانت الشروط مستوفاة أو ناقصة أو غير مطابقة.",
-      "يعتمد النظام على بنية معمارية منفصلة تجمع بين لوحة تحكم تفاعلية عبر React وخدمات خلفية عالية الأداء عبر Python/FastAPI لمعالجة المستندات وتوليد تقارير التدقيق بصيغة PDF."
-    ],
-    workflowStages: [
-      "رفع متطلبات المناقصة",
-      "رفع وثائق عطاءات الشركات",
-      "استخراج البيانات بالذكاء الاصطناعي",
-      "فحص المطابقة وفق شروط المناقصة",
-      "مصفوفة المؤهلين والمستبعدين والنواقص",
-      "لوحة المقارنة والتقييم",
-      "تقرير المطابقة النهائي"
-    ],
-    engineeringHighlights: [
-      "ذكاء معالجة المستندات عبر Gemini API ومكتبات بايثون المتخصصة في تحليل وتفريغ ملفات PDF",
-      "محرك مطابقة منطقي للتحقق من الحدود المالية والتراخيص وتواريخ الصلاحية آلياً",
-      "تحويل المستندات غير المهيكلة والقوائم المالية إلى مخططات بيانات منظمة ودقيقة",
-      "لوحة مقارنة تفاعلية تتيح تقييماً شفافاً ومتزامناً لعدة موردين على نفس المناقصة",
-      "توليد مؤتمت لتقارير المطابقة والتدقيق بصيغة PDF قابلة للأرشفة القانونية",
-      "بنية خدمات مصغرة غير متزامنة مبنية على Python و FastAPI"
-    ],
-    caseStudySections: [
-      {
-        title: "حالة ونطاق المشروع",
-        badge: "قيد التطوير",
-        points: [
-          "مشروع برمجي قيد التطوير والتنفيذ الهندسي النشط.",
-          "يبرهن المشروع على حل المشكلات المؤسسية من خلال ذكاء المستندات، والتحقق من المطابقة، وهندسة واجهات APIs، وتصميم قواعد البيانات، وإصدار التقارير المؤتمتة.",
-          "كافة المسارات والبنى المعمارية والتقنيات المعروضة تمثل المخطط الهندسي الجاري تنفيذه حالياً."
-        ]
-      },
-      {
-        title: "التحدي والمشكلة الأساسية",
-        badge: "عائق الفرز اليدوي",
-        points: [
-          "يتطلب تقييم العطاءات في منصات المشتريات الحكومية مثل GeM مراجعة يدوية مضنية لمئات الصفحات والمستندات المعقدة لكل مورد.",
-          "المراجعة اليدوية للشروط الإلزامية—مثل الحد الأدنى لحجم الأعمال (3 كرور روبية)، وسريان التراخيص، وإثباتات الخبرة—عرضة للإجهاد والسهو البشري.",
-          "تفتقر لجان التقييم إلى أداة سريعة ومؤتمتة لرصد المستندات الناقصة، وإقرار الأهلية، وإصدار تقارير تدقيق مقارنة وموثقة."
-        ]
-      },
-      {
-        title: "الحل المقترح ومسار العمل المخطط",
-        badge: "مسار عمل مخطط",
-        points: [
-          "رفع متطلبات المناقصة: قراءة ملف كراسة الشروط واستخراج المعايير الإلزامية وحدود الأهلية.",
-          "رفع وثائق الموردين: استقبال الميزانيات العمومية والشهادات وتراخيص التسجيل وإقرارات المطابقة.",
-          "استخراج البيانات الذكي: قراءة واستخلاص الأرقام والتواريخ والبنود الإلزامية من ملفات PDF بواسطة الذكاء الاصطناعي.",
-          "محرك فحص المطابقة: مقارنة بيانات المورد مع اشتراطات المناقصة لتصنيف البنود (مؤهل، مستبعد، مستند ناقص).",
-          "لوحة المقارنة والتقرير: تحليل مقارن بين المتنافسين وتوليد تقرير المطابقة والتدقيق النهائي بصيغة PDF."
-        ]
-      },
-      {
-        title: "المنظومة التقنية المخططة",
-        badge: "التقنيات المقترحة",
-        points: [
-          "واجهة المستخدم: React (لوحة تحكم متجاوبة لاستعراض المناقصات وفحص العطاءات).",
-          "الخدمات الخلفية: Python / FastAPI (واجهات برمجة غير متزامنة عالية الأداء لمعالجة المستندات).",
-          "تخزين البيانات: MongoDB أو SQL Server (لتخزين شروط المناقصات، ملفات الموردين، وسجلات التدقيق).",
-          "الذكاء الاصطناعي ومعالجة الوثائق: Gemini API ومكتبات بايثون المتخصصة في استخراج النصوص والجداول.",
-          "محرك التقارير: توليد برمجي آلي لتقارير المطابقة بصيغة PDF."
-        ]
-      }
-    ],
-    metrics: [
-      { label: "حالة المشروع", value: "قريباً / قيد التطوير" },
-      { label: "المجال المستهدف", value: "مشتريات GeM الحكومية" },
-      { label: "محرك الذكاء المخطط", value: "Gemini + Python" },
-      { label: "طبيعة المشروع", value: "برمجيات مؤسسية" }
-    ],
-    link: null,
-    githubUrl: null,
-    statusNote: "مشروع هندسي — قيد التطوير النشط حالياً"
   },
   {
     id: "hera-lux",

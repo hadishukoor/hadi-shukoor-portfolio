@@ -1,3 +1,4 @@
+import { ProjectCard, ProjectDetails } from './ProjectPresentation';
 import React, { useState, useEffect, useRef } from 'react';
 import { getProjects, ProjectItem } from '../data/work';
 import { useLanguage } from '../context/LanguageContext';
@@ -73,185 +74,15 @@ export const SelectedWork: React.FC = () => {
           </p>
         </div>
 
-        {/* 01 — Featured Flagship Project: MAGNAVOLT */}
-        {projects.slice(0, 1).map((project) => (
-          <div
-            key={project.id}
-            className="group relative bg-[#ede6df] border-2 border-[#248a61]/30 hover:border-[#248a61] rounded-3xl p-6 sm:p-8 md:p-12 transition-all duration-300 shadow-sm"
-          >
-            {/* Top Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="text-xs font-barlow font-black text-white bg-[#248a61] px-3 py-1 rounded-full uppercase tracking-widest">
-                  {t.work.flagshipBadge}
-                </span>
-
-                {/* Country / International Metadata Badge */}
-                {project.countryBadge && (
-                  <span className="text-[10px] sm:text-[11px] font-poppins font-semibold px-2.5 py-1 rounded-full bg-[#363636] text-[#ede6df] uppercase tracking-wider flex items-center gap-1.5 shadow-2xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#248a61] animate-pulse" />
-                    <span>{project.countryBadge}</span>
-                  </span>
-                )}
-
-                <span className="text-xs font-poppins font-semibold text-[#248a61] tracking-wider uppercase">
-                  {project.status}
-                </span>
-                <span className="hidden sm:inline-flex text-[10px] font-poppins px-2.5 py-0.5 rounded-full bg-[#363636]/10 text-[#363636] font-medium">
-                  {t.work.dualPortalsBadge}
-                </span>
-              </div>
-              <span className="text-3xl font-barlow font-black text-[#363636]/20 group-hover:text-[#248a61]/40 transition-colors">
-                {project.number}
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 space-y-5">
-                <div>
-                  <span className="text-xs font-poppins uppercase tracking-[0.2em] text-[#363636]/60 font-medium block mb-1">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl sm:text-4xl md:text-5xl font-barlow font-black text-[#363636] uppercase tracking-tight">
-                    {project.title} <span className="text-[#248a61]">— {project.headline}</span>
-                  </h3>
-                </div>
-
-                <p className="text-xs sm:text-sm md:text-base font-poppins text-[#363636]/80 leading-relaxed">
-                  {project.summary}
-                </p>
-
-                {/* 8-Stage Workflow Pill Bar */}
-                {project.workflowStages && (
-                  <div className="space-y-2 pt-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-poppins uppercase tracking-[0.25em] font-bold text-[#248a61] block">
-                        {t.work.pipelineLabel}
-                      </span>
-                      {project.quickFixWorkflow && (
-                        <span className="text-[10px] font-poppins px-2 py-0.5 rounded bg-[#248a61]/10 text-[#248a61] font-semibold">
-                          {t.work.quickFixLabel}
-                        </span>
-                      )}
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.workflowStages.map((stageName, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-1 rounded-md bg-white/70 border border-[#363636]/10 text-[10px] sm:text-xs font-poppins text-[#363636] font-medium flex items-center gap-1"
-                        >
-                          <span className="text-[#248a61] font-bold">{idx + 1}.</span>
-                          <span>{stageName}</span>
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Key Technical Highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  {project.engineeringHighlights.slice(0, 4).map((highlight, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs font-poppins text-[#363636]/80">
-                      <CheckCircle2 className="w-4 h-4 text-[#248a61] shrink-0 mt-0.5" />
-                      <span>{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech Pills */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.stack.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2.5 py-1 rounded-md bg-[#363636]/5 text-[#363636] text-[10px] sm:text-xs font-poppins font-medium uppercase"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Deep-Dive Case Study Button */}
-                <div className="pt-4 flex flex-wrap items-center gap-3">
-                  <button
-                    id="magnavolt-case-study-btn"
-                    onClick={() => {
-                      setSelectedProject(project);
-                      setActiveModalTab('overview');
-                    }}
-                    className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#248a61] hover:bg-[#1f7552] text-white text-xs font-poppins font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-105 cursor-pointer"
-                  >
-                    <span>{t.work.viewCaseStudy}</span>
-                    <ArrowUpRight className="w-4 h-4 rtl:rotate-[-90deg]" />
-                  </button>
-                  <span className="text-[11px] font-poppins text-[#363636]/60 italic">
-                    {project.statusNote}
-                  </span>
-                </div>
-              </div>
-
-              {/* Right Column: Architectural Schematic Card */}
-              <div className="lg:col-span-5 space-y-4">
-                <div className="relative rounded-2xl overflow-hidden border border-[#363636]/15 bg-[#e3d9d1] p-6 sm:p-8 flex flex-col justify-between shadow-inner">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#248a61] font-bold">
-                      {t.work.architectureHeader}
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-[#248a61] animate-pulse" />
-                  </div>
-
-                  <div className="space-y-3 my-2">
-                    <div className="font-barlow font-black text-2xl sm:text-3xl text-[#363636] uppercase tracking-tight leading-tight">
-                      {project.title}
-                    </div>
-                    <p className="text-xs font-poppins text-[#363636]/75">
-                      {project.role}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-[#363636]/10 flex items-center justify-between text-[11px] font-mono text-[#363636]/70">
-                    <span>{project.location}</span>
-                    <span className="font-semibold text-[#248a61]">13 MODULES</span>
-                  </div>
-                </div>
-
-                {/* Mini System Specs Preview */}
-                <div className="bg-white/60 border border-[#363636]/10 rounded-2xl p-4 space-y-2.5 text-xs font-poppins">
-                  <div className="flex items-center justify-between text-[#363636]/70">
-                    <span className="font-semibold uppercase text-[10px] tracking-wider text-[#248a61]">
-                      {language === 'ar' ? 'معمارية الواجهات' : 'Frontend Architecture'}
-                    </span>
-                    <span>React, Tailwind, Responsive</span>
-                  </div>
-                  <div className="h-px bg-[#363636]/10" />
-                  <div className="flex items-center justify-between text-[#363636]/70">
-                    <span className="font-semibold uppercase text-[10px] tracking-wider text-[#248a61]">
-                      {language === 'ar' ? 'الواجهات الخلفية و APIs' : 'Backend & APIs'}
-                    </span>
-                    <span>ASP.NET Core REST API</span>
-                  </div>
-                  <div className="h-px bg-[#363636]/10" />
-                  <div className="flex items-center justify-between text-[#363636]/70">
-                    <span className="font-semibold uppercase text-[10px] tracking-wider text-[#248a61]">
-                      {language === 'ar' ? 'قواعد البيانات' : 'Database'}
-                    </span>
-                    <span>MySQL (Normalized Schema)</span>
-                  </div>
-                  <div className="h-px bg-[#363636]/10" />
-                  <div className="flex items-center justify-between text-[#363636]/70">
-                    <span className="font-semibold uppercase text-[10px] tracking-wider text-[#248a61]">
-                      {language === 'ar' ? 'محرك التقارير والمستندات' : 'Document Engine'}
-                    </span>
-                    <span>QuestPDF C# Engine</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {projects.slice(0, 1).map(project => (
+          <ProjectCard key={project.id} project={project} featured onOpen={() => setSelectedProject(project)} />
         ))}
 
-        {/* Secondary Projects Grid: 02 Sands PPF, 03 GeM Procurement Platform, 04 Hera-Lux, 05 Compost */}
+        {/* Secondary Projects Grid: 02 GeM Procurement Platform, 03 Sands PPF, 04 Hera-Lux, 05 Compost */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.slice(1).map((project) => (
+          {projects.slice(1).map((project) => project.presentation ? (
+            <ProjectCard key={project.id} project={project} onOpen={() => setSelectedProject(project)} />
+          ) : (
             <div
               key={project.id}
               className={`group bg-[#ede6df] border ${
@@ -462,6 +293,7 @@ export const SelectedWork: React.FC = () => {
       {selectedProject && (
         <div
           ref={modalOverlayRef}
+          data-project-overlay
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setSelectedProject(null);
@@ -482,6 +314,7 @@ export const SelectedWork: React.FC = () => {
               <X className="w-5 h-5" />
             </button>
 
+            {selectedProject.presentation ? <ProjectDetails project={selectedProject} /> : (
             <div className="space-y-6">
               {/* Header Info */}
               <div className="pr-12 rtl:pr-0 rtl:pl-12">
@@ -856,6 +689,7 @@ export const SelectedWork: React.FC = () => {
                 </div>
               </div>
             </div>
+            )}
           </div>
         </div>
       )}

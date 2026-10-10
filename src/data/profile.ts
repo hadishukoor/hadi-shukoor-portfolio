@@ -85,7 +85,7 @@ export const PROFILE: ProfileInfo = {
   summary: [
     "Software Developer with hands-on experience engineering complete digital systems around real business requirements.",
     "Specialized in end-to-end software delivery: taking manual or operational business processes and turning them into automated software workflows, REST API architectures, and normalized relational persistence.",
-    "Proven delivery across enterprise ERP workflows and dual-interface platforms (MAGNAVOLT), bilingual RTL customer verification portals (SANDS PPF), and document intelligence systems."
+    "Delivered a business website and service-management platform (MAGNAVOLT) and bilingual customer verification portals (SANDS PPF), with upcoming research into AI-assisted bid compliance."
   ],
   bio: {
     heading: "A SOFTWARE DEVELOPER WHO BUILDS SYSTEMS.",

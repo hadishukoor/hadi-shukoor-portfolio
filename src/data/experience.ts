@@ -27,22 +27,19 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "magnavolt",
     number: "01",
     period: "Aug 2026 – Present",
-    role: "Full Stack Developer",
+    role: "Sole Full-Stack Developer",
     company: "MAGNAVOLT Technical Services L.L.C - S.P.C",
     type: "Contract",
     location: "Remote (UAE Engineering Services)",
     intlBadge: "UAE • TECHNICAL ENGINEERING SERVICES",
     current: true,
-    overview:
-      "Designing and engineering an integrated enterprise operations ecosystem: uniting a public corporate portal with an internal ERP encompassing dedicated Admin and Technician platforms, automated workflows, and document generation.",
+    overview: "I designed, developed and deployed MAGNAVOLT’s public website and service-management platform as the sole full-stack developer, and continue to maintain it.",
     responsibilities: [
-      "Architecting end-to-end full-stack systems: connecting corporate website inquiries directly into internal ERP triage queues via secure REST APIs.",
-      "Engineering dual-interface applications: an administrative command center for dispatch, inventory, and approvals, and a dedicated field technician execution portal.",
-      "Implementing operational workflows: an 8-stage comprehensive service lifecycle (Inquiry → Triage → Dispatch → Execution → Quotation → Approval → Invoicing → Settlement) plus an expedited QuickFix direct-billing engine.",
-      "Developing high-throughput REST APIs and normalized relational schemas using ASP.NET Core, C#, Entity Framework Core, and MySQL.",
-      "Integrating QuestPDF for deterministic, programmatic compilation of branded quotations and sequential legal invoices.",
-      "Implementing stateless JWT authentication, Role-Based Access Control (RBAC), and contextual WhatsApp document dispatch pipelines."
-    ],
+      "Created the original application design and codebase as the sole developer, deployed the project and continue to maintain it.",
+      "Refined responsive administration and mobile-oriented technician interfaces, customer/company synchronization, staff lifecycle safeguards and authentication sessions.",
+      "Improved QuestPDF generation by embedding branding assets, avoiding dependencies on developer-machine file paths.",
+      "Enforced server-side business rules and financial calculations, preserved operational history and improved session lifecycle handling."
+],
     technologies: [
       "React",
       "TypeScript",
@@ -53,7 +50,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       "REST APIs",
       "QuestPDF",
       "JWT Auth",
-      "Tailwind CSS"
+      "Docker"
     ]
   },
   {
@@ -92,22 +89,19 @@ export const EXPERIENCES_AR: ExperienceItem[] = [
     id: "magnavolt",
     number: "01",
     period: "أغسطس 2026 – حتى الآن",
-    role: "مطور برمجيات متكامل (Full Stack)",
+    role: "المطور الوحيد للمشروع (Full Stack)",
     company: "ماجنافولت للخدمات الفنية (MAGNAVOLT Technical Services L.L.C - S.P.C)",
     type: "عقد عمل تجاري",
     location: "عن بُعد (خدمات هندسية وتقنية — الإمارات)",
     intlBadge: "الإمارات • خدمات هندسية وتقنية",
     current: true,
-    overview:
-      "تصميم وهندسة منظومة عمليات مؤسسية متكاملة: تجمع بين بوابة شركات عامة ونظام ERP داخلي يشمل منصات مخصصة للإدارة والفنيين، وأتمتة مسارات العمل، وتوليد المستندات الرسمية.",
+    overview: "صممت وطورت ونشرت موقع MAGNAVOLT العام ومنصة إدارة الخدمات بصفتي المطور الوحيد للمشروع، وأواصل صيانته.",
     responsibilities: [
-      "هندسة وتصميم أنظمة برمجية متكاملة: ربط استفسارات الموقع المؤسسي مباشرة بقوائم فرز التذاكر بنظام ERP عبر واجهات REST API آمنة.",
-      "تطوير تطبيقات مزدوجة الواجهة: لوحة تحكم وقيادة إدارية للتوجيه والمخزون والاعتمادات، وبوابة مستقلة لتنفيذ مهام الفنيين الميدانيين.",
-      "تنفيذ مسارات العمل التشغيلية: دورة حياة خدمة شاملة من 8 مراحل (الطلب ← الفرز ← التعيين ← التنفيذ ← عرض السعر ← الاعتماد ← إصدار الفاتورة ← التسوية) ومحرك الفوترة السريعة (QuickFix).",
-      "تطوير واجهات برمجة تطبيقات (REST APIs) عالية الكفاءة ومخططات علائقية معيارية عبر ASP.NET Core و C# و Entity Framework Core و MySQL.",
-      "دمج محرك QuestPDF لإنشاء وطباعة عروض الأسعار وفواتير الشركات الرسمية المتوافقة مع معايير الضرائب بأرقام تسلسلية دقيقة.",
-      "تطبيق المصادقة اللامركزية برموز JWT، والتحكم في الوصول المستند إلى الأدوار (RBAC)، وخطوط إرسال المستندات السياقية عبر واتساب."
-    ],
+      "أنشأت التصميم الأصلي والكود البرمجي للمشروع بالكامل بصفتي المطور الوحيد، وتوليت النشر وأواصل الصيانة.",
+      "حسّنت واجهات الإدارة المتجاوبة ومهام الفنيين على الجوال، ومزامنة سجلات العملاء والشركات، وضوابط إدارة الموظفين وجلسات المصادقة.",
+      "حسّنت توليد مستندات QuestPDF بتضمين أصول الهوية البصرية، لإزالة الاعتماد على مسارات ملفات جهاز المطور.",
+      "فرض قواعد العمل والحسابات المالية في الخادم، وحماية السجل التشغيلي، وإدارة دورة حياة الجلسات."
+],
     technologies: [
       "React",
       "TypeScript",
@@ -118,7 +112,7 @@ export const EXPERIENCES_AR: ExperienceItem[] = [
       "REST APIs",
       "QuestPDF",
       "JWT Auth",
-      "Tailwind CSS"
+      "Docker"
     ]
   },
   {
