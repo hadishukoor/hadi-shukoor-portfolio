@@ -78,7 +78,7 @@ export const SelectedWork: React.FC = () => {
           <ProjectCard key={project.id} project={project} featured onOpen={() => setSelectedProject(project)} />
         ))}
 
-        {/* Secondary Projects Grid: 02 GeM Procurement Platform, 03 Sands PPF, 04 Hera-Lux, 05 Compost */}
+        {/* Secondary Projects Grid: 02 GeM Procurement Platform, 03 DH Profiles, 04 Althaf Mattul, 05 Sands PPF, 06 Hera-Lux, 07 Compost */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.slice(1).map((project) => project.presentation ? (
             <ProjectCard key={project.id} project={project} onOpen={() => setSelectedProject(project)} />

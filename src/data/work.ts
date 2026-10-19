@@ -10,10 +10,15 @@ export interface ProjectItem {
     secondaryStatus?: string;
     detailRole?: string;
     action: string;
-    architectureTitle: string;
-    architectureSteps: string[];
-    architectureNote: string;
-    technologies: string[];
+    websiteLabel?: string;
+    compactSections?: boolean;
+    cardPreview?: { src: string; width: number; height: number; alt: string; caption: string };
+    brandVisual?: { src: string; width: number; height: number; alt: string; caption: string };
+    previews?: { src: string; width: number; height: number; caption: string; alt: string }[];
+    architectureTitle?: string;
+    architectureSteps?: string[];
+    architectureNote?: string;
+    technologies?: string[];
     links?: { label: string; url: string; note?: string }[];
   };
   id: string;
@@ -117,6 +122,13 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
     ],
     "presentation": {
       "fullTitle": "MAGNAVOLT — Business Website & Service Management Platform",
+      "cardPreview": {
+        "src": "/projects/magnavolt/website-home.jpg",
+        "width": 1440,
+        "height": 1000,
+        "caption": "Public website — homepage",
+        "alt": "MAGNAVOLT public homepage with navigation, technical-services introduction and service request controls."
+      },
       "action": "View Case Study",
       "architectureTitle": "System architecture",
       "architectureSteps": [
@@ -253,8 +265,153 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
     }
   },
   {
+    "id": "dh-profiles",
+    "number": "03",
+    "headline": "",
+    "location": "Oman",
+    "stack": [],
+    "engineeringHighlights": [],
+    "link": null,
+    "githubUrl": null,
+    "title": "DH PROFILES LLC — Corporate Website & Brand Identity",
+    "category": "Client Project · Corporate Website, Brand Identity & Digital Presence",
+    "role": "Brand Identity, Product Research & Website Development",
+    "status": "In Progress",
+    "statusNote": "Website deployment and remaining deliverables are in progress.",
+    "summary": "Building a professional digital presence for an Oman-based metal products manufacturer, from approved brand identity and product research to corporate website planning and development.",
+    "detailedDescription": [
+      "DH PROFILES LLC is an ongoing client project for an Oman-based manufacturer of metal roofing, cladding and structural steel products. The aim is a consistent, product-focused digital presence for construction companies, contractors, procurement teams and industrial businesses.",
+      "My work spans branding, product research, planning and website development. The logo presentation has been approved; company-profile preparation, social media setup and website planning and implementation remain in progress."
+    ],
+    "caseStudySections": [
+      {
+        "title": "Completed — brand identity",
+        "points": [
+          "Designed 12 logo variations in Inkscape, covering horizontal, stacked and icon-only compositions, primary and reverse variants, and black-and-white monochrome versions. Organized the variations into named groups.",
+          "Documented the approved colour system and prepared a six-slide logo presentation, which the client approved.",
+          "Brand colours: Navy #072E53 · Gray #595D60 · Reverse Light Gray #B9C0C6 · White #FFFFFF · Black #000000."
+        ]
+      },
+      {
+        "title": "Completed — research and planning",
+        "points": [
+          "Prepared product research and product-master documentation, organized documented categories and available specifications, and reviewed manufacturer and competitor websites to guide the proposed structure and content. Technical resources and unverified capabilities are kept separate from confirmed company information."
+        ]
+      },
+      {
+        "title": "Product context",
+        "points": [
+          "Documented categories include corrugated GI and aluminium profile sheets; C & Z purlins; GI decking / trapezoidal composite floor decking; roofing and cladding accessories; and chequered / hot-rolled structural steel plates."
+        ]
+      },
+      {
+        "title": "In progress — business profile and website",
+        "points": [
+          "Preparing the company profile and official LinkedIn, Facebook and Instagram profile information; finalizing website structure, content requirements and visual direction; and preparing implementation and deployment.",
+          "Planned functionality includes a responsive company and product website, product-focused pages, contact and quotation enquiries, basic SEO and performance considerations, and a predefined contact chatbot within the agreed scope. WhatsApp contact is subject to confirmation of the official business number."
+        ]
+      },
+      {
+        "title": "Remaining work and launch",
+        "points": [
+          "Complete the remaining content and deliverables, implement and test the website and enquiry flow, and prepare deployment. Domain registration has been recorded, but website launch remains pending. No live website or tested enquiry delivery is claimed."
+        ]
+      }
+    ],
+    "presentation": {
+      "fullTitle": "DH PROFILES LLC — Corporate Website & Brand Identity",
+      "action": "View Project",
+      "compactSections": true,
+      "brandVisual": {
+        "src": "/projects/dh-profiles/primary-horizontal.svg",
+        "width": 1866,
+        "height": 843,
+        "alt": "DH PROFILES LLC primary horizontal logo in navy and gray.",
+        "caption": "Brand identity — primary logo"
+      }
+    }
+  },
+  {
+    "id": "althaf-mattul",
+    "number": "04",
+    "headline": "",
+    "location": "",
+    "stack": [],
+    "engineeringHighlights": [],
+    "link": "https://althafwebsite-zeta.vercel.app/",
+    "githubUrl": null,
+    "title": "Althaf Mattul — Personal Brand Website",
+    "category": "Client Website · Personal Branding",
+    "role": "Website Development",
+    "status": "Available Preview",
+    "statusNote": "Website preview available.",
+    "summary": "Created a personal-brand website for Althaf Mattul, presenting his professional profile, leadership roles, recognitions and expertise through dedicated sections and an inquiry interface.",
+    "detailedDescription": [
+      "A personal-brand website created for my client, Althaf Mattul. The supplied link is available as a website preview."
+    ],
+    "caseStudySections": [
+      {
+        "title": "Website purpose",
+        "points": [
+          "Present Althaf’s professional profile in one place, with dedicated sections for his biography, recognitions, leadership and expertise."
+        ]
+      },
+      {
+        "title": "My confirmed contribution",
+        "points": [
+          "I created the website for Althaf Mattul. The professional accomplishments presented on the site belong to the client."
+        ]
+      },
+      {
+        "title": "Main website sections",
+        "points": [
+          "Biography and professional introduction.",
+          "Honors and awards presented in the Awards & recognition section.",
+          "Leadership roles and areas of expertise.",
+          "Inquiry interface for visitors."
+        ]
+      }
+    ],
+    "presentation": {
+      "fullTitle": "Althaf Mattul — Personal Brand Website",
+      "cardPreview": {
+        "src": "/projects/althaf-mattul/desktop-preview.jpg",
+        "width": 1440,
+        "height": 1000,
+        "caption": "Personal brand website — homepage",
+        "alt": "Althaf Mattul’s homepage with his portrait, professional introduction and section navigation."
+      },
+      "action": "View Project",
+      "websiteLabel": "Visit Website",
+      "compactSections": true,
+      "previews": [
+        {
+          "src": "/projects/althaf-mattul/desktop-preview.jpg",
+          "width": 1440,
+          "height": 1000,
+          "caption": "Desktop preview — professional introduction",
+          "alt": "Desktop view of Althaf Mattul’s website, with his portrait, professional introduction and section navigation."
+        },
+        {
+          "src": "/projects/althaf-mattul/mobile-preview.jpg",
+          "width": 390,
+          "height": 844,
+          "caption": "Mobile preview — professional introduction",
+          "alt": "Mobile view of Althaf Mattul’s website, showing his portrait, introduction and compact navigation."
+        }
+      ],
+      "links": [
+        {
+          "label": "Visit Website",
+          "url": "https://althafwebsite-zeta.vercel.app/",
+          "note": "Available website preview; final production domain not confirmed."
+        }
+      ]
+    }
+  },
+  {
     id: "sands-ppf",
-    number: "03",
+    number: "05",
     title: "SANDS PPF",
     headline: "Warranty & Operations Platform",
     category: "FULL STACK • CUSTOM WEB PLATFORM • WARRANTY & AUTOMATION",
@@ -301,7 +458,7 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
   },
   {
     id: "hera-lux",
-    number: "04",
+    number: "06",
     title: "HERA-LUX",
     headline: "MERN E-Commerce Platform",
     category: "INDEPENDENT PROJECT • E-COMMERCE • MERN ARCHITECTURE",
@@ -341,7 +498,7 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
   },
   {
     id: "compost-platform",
-    number: "05",
+    number: "07",
     title: "COMPOST PLATFORM",
     headline: "Service Marketplace Architecture",
     category: "INDEPENDENT PROJECT • SERVICE MARKETPLACE • FULL STACK",
@@ -445,6 +602,13 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
     ],
     "presentation": {
       "fullTitle": "MAGNAVOLT — موقع الشركة ومنصة إدارة الخدمات",
+      "cardPreview": {
+        "src": "/projects/magnavolt/website-home.jpg",
+        "width": 1440,
+        "height": 1000,
+        "caption": "الموقع العام — الصفحة الرئيسية",
+        "alt": "الصفحة الرئيسية العامة لموقع MAGNAVOLT، مع التنقل ومقدمة الخدمات الفنية وأزرار طلب الخدمة."
+      },
       "action": "عرض دراسة الحالة",
       "architectureTitle": "بنية النظام",
       "architectureSteps": [
@@ -581,8 +745,153 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
     }
   },
   {
+    "id": "dh-profiles",
+    "number": "03",
+    "headline": "",
+    "location": "عُمان",
+    "stack": [],
+    "engineeringHighlights": [],
+    "link": null,
+    "githubUrl": null,
+    "title": "DH PROFILES LLC — موقع الشركة والهوية البصرية",
+    "category": "مشروع عميل · موقع مؤسسي وهوية بصرية وحضور رقمي",
+    "role": "الهوية البصرية وبحث المنتجات وتطوير الموقع",
+    "status": "قيد التنفيذ",
+    "statusNote": "نشر الموقع وبقية المخرجات قيد التنفيذ.",
+    "summary": "أعمل على بناء حضور رقمي مهني لشركة تصنيع منتجات معدنية في عُمان، بدءاً من الهوية البصرية المعتمدة وبحث المنتجات، وصولاً إلى تخطيط الموقع المؤسسي وتطويره.",
+    "detailedDescription": [
+      "مشروع DH PROFILES LLC هو مشروع عميل جارٍ لشركة في عُمان تصنّع منتجات الأسقف والكسوة المعدنية والفولاذ الإنشائي. يهدف إلى حضور رقمي متسق يوضح المنتجات لشركات البناء والمقاولين وفرق المشتريات والجهات الصناعية.",
+      "يشمل عملي الهوية البصرية وبحث المنتجات والتخطيط وتطوير الموقع. اعتمد العميل عرض الشعار، فيما يستمر إعداد الملف التعريفي وحسابات التواصل وتخطيط الموقع وتنفيذه."
+    ],
+    "caseStudySections": [
+      {
+        "title": "المكتمل — الهوية البصرية",
+        "points": [
+          "صممت 12 صيغة للشعار باستخدام Inkscape، تشمل التكوين الأفقي والرأسي والرمز المنفرد، والنسخ الأساسية والمعكوسة والأحادية بالأبيض والأسود، ونظمتها في مجموعات واضحة الأسماء.",
+          "وثّقت نظام الألوان المعتمد وأعددت عرضاً للشعار من ست شرائح اعتمده العميل.",
+          "ألوان الهوية: كحلي #072E53 · رمادي #595D60 · رمادي فاتح للنسخ المعكوسة #B9C0C6 · أبيض #FFFFFF · أسود #000000."
+        ]
+      },
+      {
+        "title": "المكتمل — البحث والتخطيط",
+        "points": [
+          "أعددت بحث المنتجات ووثائقها الرئيسية ونظمت الفئات والمواصفات المتاحة، وراجعت مواقع المصنّعين والمنافسين لتوجيه هيكل الموقع ومحتواه المقترح. تُفصل الموارد التقنية والقدرات غير المتحقق منها عن معلومات الشركة المؤكدة."
+        ]
+      },
+      {
+        "title": "سياق المنتجات",
+        "points": [
+          "تشمل الفئات الموثقة ألواح الصاج المجلفن والألمنيوم المموجة؛ ومدادات C وZ؛ وألواح التغطية المجلفنة للأرضيات المركبة؛ وملحقات الأسقف والكسوة؛ والألواح المعرّجة وألواح الفولاذ الإنشائي المدرفلة على الساخن."
+        ]
+      },
+      {
+        "title": "قيد التنفيذ — ملف الشركة والموقع",
+        "points": [
+          "إعداد الملف التعريفي وبيانات حسابات LinkedIn وFacebook وInstagram الرسمية، واستكمال هيكل الموقع ومتطلبات المحتوى والتوجه البصري، والتحضير للتنفيذ والنشر.",
+          "تتضمن الوظائف المخططة موقعاً متجاوباً للشركة والمنتجات وصفحات للمنتجات واستفسارات التواصل وعروض الأسعار واعتبارات أساسية للأداء وتحسين محركات البحث وروبوت تواصل بإجابات محددة ضمن النطاق المتفق عليه. يتوقف التواصل عبر WhatsApp على تأكيد رقم الشركة الرسمي."
+        ]
+      },
+      {
+        "title": "المتبقي والإطلاق",
+        "points": [
+          "استكمال المحتوى والمخرجات، وتنفيذ الموقع ومسار الاستفسارات واختبارهما، والتحضير للنشر. سُجل حجز النطاق في سياق المشروع، لكن إطلاق الموقع ما زال معلقاً. لا يُقدّم الموقع بوصفه منشوراً أو تسليم الاستفسارات بوصفه مختبراً."
+        ]
+      }
+    ],
+    "presentation": {
+      "fullTitle": "DH PROFILES LLC — موقع الشركة والهوية البصرية",
+      "action": "عرض المشروع",
+      "compactSections": true,
+      "brandVisual": {
+        "src": "/projects/dh-profiles/primary-horizontal.svg",
+        "width": 1866,
+        "height": 843,
+        "alt": "الشعار الأفقي الأساسي لشركة DH PROFILES LLC بالكحلي والرمادي.",
+        "caption": "الهوية البصرية — الشعار الأساسي"
+      }
+    }
+  },
+  {
+    "id": "althaf-mattul",
+    "number": "04",
+    "headline": "",
+    "location": "",
+    "stack": [],
+    "engineeringHighlights": [],
+    "link": "https://althafwebsite-zeta.vercel.app/",
+    "githubUrl": null,
+    "title": "ألطاف ماتول — موقع الهوية المهنية الشخصية",
+    "category": "موقع عميل · هوية مهنية شخصية",
+    "role": "تطوير الموقع",
+    "status": "معاينة متاحة",
+    "statusNote": "تتوفر معاينة للموقع.",
+    "summary": "أنشأت موقعاً للهوية المهنية الشخصية للعميل ألطاف ماتول، يعرض ملفه المهني وأدواره القيادية وتكريماته وخبراته عبر أقسام مخصصة وواجهة للاستفسارات.",
+    "detailedDescription": [
+      "موقع للهوية المهنية الشخصية أنشأته لعميلي ألطاف ماتول. الرابط المرفق متاح لمعاينة الموقع."
+    ],
+    "caseStudySections": [
+      {
+        "title": "هدف الموقع",
+        "points": [
+          "عرض الملف المهني لألطاف في مكان واحد، مع أقسام مخصصة لسيرته وتكريماته وأدواره القيادية وخبراته."
+        ]
+      },
+      {
+        "title": "مساهمتي المؤكدة",
+        "points": [
+          "أنشأت الموقع للعميل ألطاف ماتول. الإنجازات المهنية المعروضة في الموقع تخص العميل."
+        ]
+      },
+      {
+        "title": "الأقسام الرئيسية للموقع",
+        "points": [
+          "السيرة والتعريف المهني.",
+          "التكريمات والجوائز في قسم «الجوائز والتقدير».",
+          "الأدوار القيادية ومجالات الخبرة.",
+          "واجهة للاستفسارات من الزوار."
+        ]
+      }
+    ],
+    "presentation": {
+      "fullTitle": "ألطاف ماتول — موقع الهوية المهنية الشخصية",
+      "cardPreview": {
+        "src": "/projects/althaf-mattul/desktop-preview.jpg",
+        "width": 1440,
+        "height": 1000,
+        "caption": "موقع الهوية المهنية — الصفحة الرئيسية",
+        "alt": "الصفحة الرئيسية لموقع ألطاف ماتول، مع صورته ومقدمته المهنية وروابط الأقسام."
+      },
+      "action": "عرض المشروع",
+      "websiteLabel": "زيارة الموقع",
+      "compactSections": true,
+      "previews": [
+        {
+          "src": "/projects/althaf-mattul/desktop-preview.jpg",
+          "width": 1440,
+          "height": 1000,
+          "caption": "معاينة سطح المكتب — التعريف المهني",
+          "alt": "موقع ألطاف ماتول على سطح المكتب، ويعرض صورته وتعريفه المهني وروابط التنقل بين الأقسام."
+        },
+        {
+          "src": "/projects/althaf-mattul/mobile-preview.jpg",
+          "width": 390,
+          "height": 844,
+          "caption": "معاينة الجوال — التعريف المهني",
+          "alt": "موقع ألطاف ماتول على الجوال، ويعرض صورته وتعريفه وقائمة التنقل المختصرة."
+        }
+      ],
+      "links": [
+        {
+          "label": "زيارة الموقع",
+          "url": "https://althafwebsite-zeta.vercel.app/",
+          "note": "معاينة متاحة للموقع؛ لم يُؤكد النطاق النهائي للإنتاج."
+        }
+      ]
+    }
+  },
+  {
     id: "sands-ppf",
-    number: "03",
+    number: "05",
     title: "SANDS PPF",
     headline: "منصة التحقق من الضمان وإدارة العمليات",
     category: "تطوير شامل • منصة ويب مخصصة • إدارة الضمان والأتمتة",
@@ -629,7 +938,7 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
   },
   {
     id: "hera-lux",
-    number: "04",
+    number: "06",
     title: "HERA-LUX",
     headline: "منصة تجارة إلكترونية متكاملة (MERN)",
     category: "مشروع مستقل • تجارة إلكترونية • بنية MERN",
@@ -669,7 +978,7 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
   },
   {
     id: "compost-platform",
-    number: "05",
+    number: "07",
     title: "COMPOST PLATFORM",
     headline: "منصة سوق خدمات ثنائي الأطراف",
     category: "مشروع مستقل • سوق خدمات • تطوير شامل",
