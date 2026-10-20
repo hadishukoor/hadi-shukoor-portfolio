@@ -32,6 +32,9 @@ export interface ProjectItem {
   countryBadge?: string;
   bilingualBadge?: string;
   coverImage?: string;
+  coverAlt?: string;
+  coverCaption?: string;
+  cardStatus?: string;
   stack: string[];
   summary: string;
   detailedDescription: string[];
@@ -416,7 +419,11 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
     headline: "Warranty & Operations Platform",
     category: "FULL STACK • CUSTOM WEB PLATFORM • WARRANTY & AUTOMATION",
     role: "Full Stack Developer",
-    status: "PRODUCTION DELIVERED",
+    status: "PROJECT SHOWCASE",
+    cardStatus: "Project Preview",
+    coverImage: "/projects/sands-ppf/arabic-homepage.png",
+    coverAlt: "SANDS PPF Arabic homepage with vehicle imagery, navigation and an introduction to car protection services in Oman.",
+    coverCaption: "Website preview — Arabic homepage",
     location: "Remote (Oman-based Client)",
     countryBadge: "OMAN • INTERNATIONAL PROJECT",
     bilingualBadge: "BILINGUAL • ENGLISH / ARABIC",
@@ -431,9 +438,9 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
       "Google Sheets API"
     ],
     summary:
-      "End-to-end delivery of a bilingual (English / Arabic) dual-tier production platform for an Oman-based automotive business: a public self-service warranty verification portal with verified RTL layout coupled with a secured internal admin operations console and automated Google Sheets synchronization.",
+      "Developed a bilingual (English / Arabic) web platform for an Oman-based automotive business: a public self-service warranty verification portal with verified RTL layout coupled with a secured internal admin operations console and automated Google Sheets synchronization.",
     detailedDescription: [
-      "Owned complete lifecycle delivery from raw business requirements to production deployment for an Oman-based automotive business.",
+      "Developed the website and warranty-management platform for an Oman-based automotive business, translating requirements into public and administrative interfaces.",
       "Engineered a bilingual web experience supporting both English and Arabic with native RTL directionality, localized typography, and responsive validation.",
       "Built public-facing instant warranty lookup allowing vehicle owners to verify authentic installation records in Arabic or English without manual customer-service friction.",
       "Developed an internal administrative management system powered by JWT token-based authentication and role-based permissions.",
@@ -444,17 +451,17 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
       "Dual-interface architecture: public client lookup and secured admin operations",
       "Centralized warranty data schema and validation models",
       "Stateless JWT-based session security and role-guarded endpoints",
-      "Automated Google Sheets integration eliminating manual back-office data entry",
-      "Production deployment configuration and responsive cross-device layout"
+      "Google Sheets integration for synchronizing warranty records",
+      "Deployment configuration and responsive cross-device layout"
     ],
     metrics: [
       { label: "Languages", value: "English + Arabic (RTL)" },
       { label: "System Tiers", value: "2 (Public + Admin)" },
       { label: "Data Pipeline", value: "Sheets Sync" }
     ],
-    link: null,
+    link: "https://sands-ppf-frontend-rbobc56xc-hadishukoor111-8206s-projects.vercel.app/ar",
     githubUrl: null,
-    statusNote: "Delivered Client Platform — Production In Use (Oman)"
+    statusNote: "Project showcase — bilingual website and warranty platform"
   },
   {
     id: "hera-lux",
@@ -896,7 +903,11 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
     headline: "منصة التحقق من الضمان وإدارة العمليات",
     category: "تطوير شامل • منصة ويب مخصصة • إدارة الضمان والأتمتة",
     role: "مطور برمجيات متكامل (Full Stack)",
-    status: "مكتمل ومُسلّم للإنتاج",
+    status: "عرض المشروع",
+    cardStatus: "معاينة المشروع",
+    coverImage: "/projects/sands-ppf/arabic-homepage.png",
+    coverAlt: "الصفحة الرئيسية العربية لموقع SANDS PPF، مع صورة سيارة وروابط التنقل والتعريف بخدمات حماية السيارات في عُمان.",
+    coverCaption: "معاينة الموقع — الصفحة الرئيسية العربية",
     location: "عن بُعد (مشروع لشركة في سلطنة عُمان)",
     countryBadge: "عُمان • مشروع دولي",
     bilingualBadge: "ثنائي اللغة • عربي / إنجليزي",
@@ -911,9 +922,9 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
       "Google Sheets API"
     ],
     summary:
-      "بناء وتسليم منصة إنتاجية متكاملة ثنائية اللغة (عربي / إنجليزي) تدعم اتجاه الكتابة من اليمين إلى اليسار (RTL) لشركة خدمات سيارات مقرها سلطنة عُمان: تجمع بين بوابة تحقق ذاتي عامة من الضمان لمالكي المركبات ولوحة تحكم إدارية داخلية مؤمنة، مع مزامنة مؤتمتة ثنائية الاتجاه مع Google Sheets.",
+      "تطوير منصة ويب متكاملة ثنائية اللغة (عربي / إنجليزي) تدعم اتجاه الكتابة من اليمين إلى اليسار (RTL) لشركة خدمات سيارات مقرها سلطنة عُمان: تجمع بين بوابة تحقق ذاتي عامة من الضمان لمالكي المركبات ولوحة تحكم إدارية داخلية مؤمنة، مع مزامنة مؤتمتة ثنائية الاتجاه مع Google Sheets.",
     detailedDescription: [
-      "تولي دورة التطوير والتسليم بالكامل من مرحلة المتطلبات التشغيلية الخام حتى النشر الفعلي لشركة في سلطنة عُمان.",
+      "تطوير الموقع ومنصة إدارة الضمان لشركة خدمات سيارات في سلطنة عُمان، وتحويل المتطلبات إلى واجهات عامة وإدارية.",
       "تطوير تجربة ويب ثنائية اللغة (عربي وإنجليزي) تدعم اتجاه RTL بمرونة عالية وأسس خطوط عربية واضحة ومقروءة.",
       "بناء بوابة عامة للاستعلام الفوري عن الضمان تتيح لمالكي المركبات التحقق من سجلات التركيب المعتمدة باللغتين دون الحاجة لتدخل خدمة العملاء اليدوي.",
       "تطوير نظام إدارة وتشغيل داخلي مدعوم بالمصادقة اللامركزية بواسطة رموز JWT وصلاحيات مستندة إلى الأدوار (RBAC).",
@@ -924,17 +935,17 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
       "معمارية ثنائية الواجهة: بوابة استعلام عامة للعملاء ولوحة عمليات إدارية آمنة",
       "مخطط ونماذج بيانات معيارية للضمان والتحقق من صحة المدخلات",
       "أمان الجلسات عبر رموز JWT اللامركزية وحماية المسارات حسب الأدوار",
-      "مزامنة تلقائية مع Google Sheets ألغت الحاجة للإدخال اليدوي للبيانات",
-      "تهيئة النشر للإنتاج وتصميم متجاوب بالكامل عبر مختلف أحجام الشاشات والأجهزة"
+      "تكامل مع Google Sheets لمزامنة سجلات الضمان",
+      "تهيئة النشر وتصميم متجاوب بالكامل عبر مختلف أحجام الشاشات والأجهزة"
     ],
     metrics: [
       { label: "اللغات المدعومة", value: "العربية + الإنجليزية (RTL)" },
       { label: "مستويات النظام", value: "2 (بوابة عامة + لوحة إدارة)" },
       { label: "خط مزامنة البيانات", value: "مزامنة آلية مع Sheets" }
     ],
-    link: null,
+    link: "https://sands-ppf-frontend-rbobc56xc-hadishukoor111-8206s-projects.vercel.app/ar",
     githubUrl: null,
-    statusNote: "منصة عميل تم تسليمها — قيد التشغيل الإنتاجي (سلطنة عُمان)"
+    statusNote: "عرض المشروع — موقع ثنائي اللغة ومنصة لإدارة الضمان"
   },
   {
     id: "hera-lux",

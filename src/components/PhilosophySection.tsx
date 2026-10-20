@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { RegistrationCorner, SectionContourLines } from './graphics/ArchitecturalDecor';
 
 export const PhilosophySection: React.FC = () => {
   const { language, t } = useLanguage();
+
+  const track = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const count = t.philosophy.principles.length;
+  const moveTo = (index: number) => {
+    const container = track.current;
+    if (!container) return;
+    const next = Math.max(0, Math.min(count - 1, index));
+    const card = container.children[next] as HTMLElement;
+    const delta = card.getBoundingClientRect().left - container.getBoundingClientRect().left;
+    container.scrollBy({ left: delta, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  };
+  useEffect(() => { track.current?.scrollTo({ left: 0, behavior: 'instant' }); setActive(0); }, [language]);
+  const updateActive = () => {
+    const container = track.current;
+    if (!container) return;
+    const center = container.getBoundingClientRect().left + container.clientWidth / 2;
+    const distances = (Array.from(container.children) as Element[]).map(card => Math.abs(card.getBoundingClientRect().left + card.clientWidth / 2 - center));
+    setActive(distances.indexOf(Math.min(...distances)));
+  };
 
   return (
     <section
@@ -44,12 +64,22 @@ export const PhilosophySection: React.FC = () => {
         </div>
 
         {/* Right Column: 6 Engineering Principles */}
-        <div className="lg:col-span-7 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="lg:col-span-7 min-w-0 space-y-6">
+          <div ref={track} id="manifesto-rules" tabIndex={0} role="region" aria-label={language === 'ar' ? 'المبادئ الهندسية — اسحب لاستعراضها' : 'Engineering principles — swipe to explore'}
+            onScroll={updateActive}
+            onKeyDown={event => {
+              if (window.matchMedia('(min-width: 768px)').matches) return;
+              if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                event.preventDefault();
+                moveTo(active + ((event.key === 'ArrowRight') !== (language === 'ar') ? 1 : -1));
+              }
+            }}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-2 md:pb-0 md:grid md:grid-cols-2 md:overflow-visible focus-visible:outline-2 focus-visible:outline-[#248a61] rounded-2xl">
+
             {t.philosophy.principles.map((principle, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#ede6df] border border-[#363636]/10 hover:border-[#248a61]/50 p-6 rounded-2xl transition-all duration-300 hover:-translate-y-1 shadow-xs"
+                className="min-w-0 w-full shrink-0 snap-start md:w-auto group relative bg-[#ede6df] border border-[#363636]/10 hover:border-[#248a61]/50 p-6 rounded-2xl transition-all duration-300 md:hover:-translate-y-1 motion-reduce:transform-none shadow-xs"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-barlow font-bold text-[#248a61] tracking-widest uppercase">
@@ -67,6 +97,11 @@ export const PhilosophySection: React.FC = () => {
                 </p>
               </div>
             ))}
+          </div>
+          <div className="md:hidden flex flex-wrap items-center justify-between gap-3 text-sm font-poppins">
+            <button type="button" aria-controls="manifesto-rules" disabled={active === 0} onClick={() => moveTo(active - 1)} className="min-h-11 px-4 rounded-full border border-[#248a61] text-[#1b6a4a] disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#248a61]">{language === 'ar' ? 'السابق' : 'Previous'}</button>
+            <span aria-live="polite" aria-atomic="true">{language === 'ar' ? `${active + 1} من ${count}` : `${active + 1} of ${count}`}</span>
+            <button type="button" aria-controls="manifesto-rules" disabled={active === count - 1} onClick={() => moveTo(active + 1)} className="min-h-11 px-4 rounded-full bg-[#248a61] text-white disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#248a61]">{language === 'ar' ? 'التالي' : 'Next'}</button>
           </div>
         </div>
       </div>

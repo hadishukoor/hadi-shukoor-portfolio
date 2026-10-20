@@ -94,26 +94,12 @@ export const SelectedWork: React.FC = () => {
               <div className="space-y-4">
                 {/* Visual Editorial / Project Image Header */}
                 {project.coverImage ? (
-                  // Real Supplied Project Visual Asset
-                  <div className="relative rounded-2xl overflow-hidden border border-[#363636]/15 bg-[#1f1e1d] aspect-[16/9] w-full group/img shadow-xs">
-                    <img
-                      src={project.coverImage}
-                      alt={project.title}
-                      className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/img:scale-[1.02]"
-                    />
-                    {/* Floating Badges */}
-                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-barlow font-black text-white bg-[#248a61] px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
-                          {project.number}
-                        </span>
-                        <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-white bg-[#1f1e1d]/85 backdrop-blur-xs border border-white/10 px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1.5 shadow-sm">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#248a61] animate-pulse" />
-                          <span>{t.work.upcomingBadge}</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <figure className="rounded-2xl overflow-hidden border border-[#363636]/15 bg-white">
+                    <button type="button" onClick={() => { setSelectedProject(project); setActiveModalTab('overview'); }} aria-label={`${t.work.viewCaseStudy}: ${project.title}`} className="block w-full cursor-pointer focus-visible:outline-4 focus-visible:outline-offset-[-4px] focus-visible:outline-[#248a61]">
+                      <img src={project.coverImage} alt={project.coverAlt || project.title} loading="lazy" decoding="async" className="block w-full h-auto" />
+                    </button>
+                    {project.coverCaption && <figcaption className="px-4 py-3 text-xs font-poppins text-[#363636]">{project.coverCaption}</figcaption>}
+                  </figure>
                 ) : project.isUpcoming ? (
                   // Schematic Architectural Visual Panel for Upcoming Engineering Project (Refined Deep Charcoal #363636 Palette)
                   <div className="relative rounded-2xl overflow-hidden p-5 sm:p-6 bg-[#363636] border border-[#248a61]/35 flex flex-col justify-between min-h-[165px] text-[#ede6df] shadow-md group/panel">
@@ -264,6 +250,7 @@ export const SelectedWork: React.FC = () => {
                 </div>
               </div>
 
+              {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1b6a4a] underline underline-offset-4">{language === 'ar' ? 'معاينة الموقع' : 'View Website Preview'}<ArrowUpRight className="w-4 h-4" aria-hidden="true" /></a>}
               {/* Action Footer */}
               <div className="pt-6 mt-6 border-t border-[#363636]/10 flex items-center justify-between">
                 <button
@@ -277,11 +264,11 @@ export const SelectedWork: React.FC = () => {
                   <ChevronRight className="w-3.5 h-3.5 rtl:rotate-180" />
                 </button>
                 <span className="text-[10px] font-poppins text-[#363636]/60 font-medium">
-                  {project.isUpcoming
+                  {project.cardStatus || (project.isUpcoming
                     ? (language === 'ar' ? 'قريباً / قيد التطوير' : 'Coming Soon')
                     : project.statusNote.includes('Coming Soon') || project.statusNote.includes('قريباً')
                     ? (language === 'ar' ? 'قريباً' : 'Coming Soon')
-                    : (language === 'ar' ? 'تم التسليم' : 'Delivered')}
+                    : (language === 'ar' ? 'تم التسليم' : 'Delivered'))}
                 </span>
               </div>
             </div>
@@ -444,13 +431,12 @@ export const SelectedWork: React.FC = () => {
               {activeModalTab === 'overview' && (
                 <div className="space-y-5">
                   {selectedProject.coverImage && (
-                    <div className="relative rounded-2xl overflow-hidden border border-[#363636]/15 bg-[#1f1e1d] aspect-[16/9] w-full shadow-md">
-                      <img
-                        src={selectedProject.coverImage}
-                        alt={selectedProject.title}
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
+                    <figure className="rounded-2xl overflow-hidden border border-[#363636]/15 bg-white">
+                      <a href={selectedProject.coverImage} target="_blank" rel="noopener noreferrer" aria-label={language === 'ar' ? 'فتح الصورة بالحجم الكامل' : 'Open full-size image'} className="block focus-visible:outline-4 focus-visible:outline-offset-[-4px] focus-visible:outline-[#248a61]">
+                        <img src={selectedProject.coverImage} alt={selectedProject.coverAlt || selectedProject.title} className="block w-full h-auto" />
+                      </a>
+                      {selectedProject.coverCaption && <figcaption className="px-4 py-3 text-xs font-poppins">{selectedProject.coverCaption}</figcaption>}
+                    </figure>
                   )}
 
                   <div className="space-y-3">
@@ -661,6 +647,7 @@ export const SelectedWork: React.FC = () => {
                 </div>
               )}
 
+              {selectedProject.link && <a href={selectedProject.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#1b6a4a] underline underline-offset-4">{language === 'ar' ? 'معاينة الموقع' : 'View Website Preview'}<ArrowUpRight className="w-4 h-4" aria-hidden="true" /></a>}
               {/* Footer Stack & Actions */}
               <div className="pt-4 border-t border-[#363636]/15 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap gap-1.5">
