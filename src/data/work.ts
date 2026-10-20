@@ -63,7 +63,7 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
     "role": "Sole Full-Stack Developer",
     "status": "Deployed · Ongoing Maintenance",
     "location": "United Arab Emirates",
-    "countryBadge": "UAE · Client Project",
+    "countryBadge": "Abu Dhabi, UAE · International Project",
     "stack": [
       "React",
       "TypeScript",
@@ -272,6 +272,7 @@ export const SELECTED_PROJECTS: ProjectItem[] = [
     "number": "03",
     "headline": "",
     "location": "Oman",
+    "countryBadge": "Oman · International Project",
     "stack": [],
     "engineeringHighlights": [],
     "link": null,
@@ -547,7 +548,7 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
     "role": "المطور الوحيد للمشروع (Full Stack)",
     "status": "منشور للإنتاج · صيانة مستمرة",
     "location": "الإمارات العربية المتحدة",
-    "countryBadge": "الإمارات · مشروع عميل",
+    "countryBadge": "أبوظبي، الإمارات · مشروع دولي",
     "stack": [
       "React",
       "TypeScript",
@@ -756,6 +757,7 @@ export const SELECTED_PROJECTS_AR: ProjectItem[] = [
     "number": "03",
     "headline": "",
     "location": "عُمان",
+    "countryBadge": "عُمان · مشروع دولي",
     "stack": [],
     "engineeringHighlights": [],
     "link": null,

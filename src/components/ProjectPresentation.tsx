@@ -25,6 +25,14 @@ function Architecture({ project }: { project: ProjectItem }) {
   );
 }
 
+function LocationBadge({ project }: { project: ProjectItem }) {
+  if (!project.countryBadge) return null;
+  return <span className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-[#363636]/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide leading-relaxed text-[#363636]">
+    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#248a61]" aria-hidden="true" />
+    <span>{project.countryBadge}</span>
+  </span>;
+}
+
 function BrandVisual({ project }: { project: ProjectItem }) {
   const visual = project.presentation?.brandVisual;
   if (!visual) return null;
@@ -56,6 +64,7 @@ export const ProjectCard: React.FC<{ project: ProjectItem; onOpen: () => void; f
       <div className="flex flex-wrap items-start gap-3 mb-5">
         <span className="rounded-full bg-[#248a61] text-white px-3 py-1 text-xs leading-relaxed font-semibold">{project.status}</span>
         <span className="text-xs leading-relaxed text-[#363636]/75">{project.category}</span>
+        <LocationBadge project={project} />
       </div>
       <div className={featured ? 'grid lg:grid-cols-2 gap-8 items-start' : 'space-y-5'}>
         <div className="min-w-0 space-y-4">
@@ -91,6 +100,7 @@ export function ProjectDetails({ project }: { project: ProjectItem }) {
     <div className="space-y-6 font-poppins min-w-0 text-[#363636]">
       <header className="pe-12 space-y-3">
         <p className="text-sm font-semibold text-[#248a61]">{project.status}</p>
+        <LocationBadge project={project} />
         {content.secondaryStatus && <p className="text-sm">{content.secondaryStatus}</p>}
         <h3 className="font-barlow text-2xl sm:text-3xl md:text-4xl font-black leading-tight break-words">{content.fullTitle}</h3>
         <p className="text-sm leading-relaxed">{content.detailRole || project.role}</p>
